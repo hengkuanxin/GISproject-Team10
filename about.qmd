@@ -2,8 +2,6 @@
 title: "About"
 ---
 
-About this site
+I AM MAKING MY EDIT HERE!
 
-```{r}
-1 + 1
-```
+I'M WALKING 'ERE!
