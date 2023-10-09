@@ -1,12 +1,10 @@
 ---
 title: "GIS Project Team 10"
-subtitle: "Test"
+subtitle: "Libya Flood Analysis"
 ---
 
-This is a Quarto website.
+Members:
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Zara Mufti
 
-```{r}
-1 + 1
-```
+Heng Kuan Xin
