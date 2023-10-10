@@ -4,4 +4,4 @@ title: "About"
 
 I AM MAKING MY EDIT HERE!
 
-I'M WALKING 'ERE!
+I'M WALKING 'ERE! #this is not being used right?
