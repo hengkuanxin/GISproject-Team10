@@ -2,7 +2,7 @@
 title: "GIS Project Team 10"
 ---
 
-Test
+[3D Model Testing, Click to Open](https://3d-map-derna.netlify.app)
 
 Members:
 

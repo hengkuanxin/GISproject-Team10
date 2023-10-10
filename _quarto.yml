@@ -4,6 +4,8 @@ project:
 website:
   title: "AY2023/24S1 Team 10 - FloodScape:Unearthing Resilience"
   navbar:
+    background: dark
+    search: True
     left:
       - href: index.qmd
         text: Overview
