@@ -61,5 +61,5 @@ To recommend flood mitigation strategies to ease damages from future similar dis
 - Preparing poster and project webpage.
 
 ### 6. Schedule
-[TO BE FILLED]
+![Project Schedule](images/project_schedule.png)
 
