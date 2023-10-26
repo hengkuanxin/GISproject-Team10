@@ -9,7 +9,10 @@ website:
     left:
       - href: index.qmd
         text: Overview
-      - about.qmd
+      - href: about.qmd
+        text: About
+      - href: report.qmd
+        text: Report
 
 format:
   html:
