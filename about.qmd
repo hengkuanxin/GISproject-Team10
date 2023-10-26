@@ -1,5 +1,42 @@
 ---
 title: "About"
 ---
+### 1. Introduction
+On about September 11, 2023, a heavy storm—Storm Daniel—occurred over the Mediterranean Sea, bringing heavy rains upon the city of Derna, Libya. This caused the collapse of two major dams, ultimately resulting in a devastating flood that killed tens of thousands of people and destroyed homes and many major infrastructures.
 
-Test from RStudio
+[more information to be inserted, including the background of Derna as well as the cause of the dams’ failure.]
+
+### 2. Motivation
+Our project is motivated by the desire to help the people of Derna recover from the recent flood and build a more resilient city for the future. We believe our analysis will serve as an important insight and tool for Derna’s policymakers to make informed urban planning decisions to identify areas that are at risk of flooding and to develop flood mitigation strategies to prevent and minimise flood damage from any future storms or floods in Derna.
+
+### 3. Objectives
+To detect land use/land cover changes before and after the Derna flood disaster using remote satellite imagery.
+To recommend flood mitigation strategies to ease damages from future similar disasters.
+
+### 4. Data Involved
+- Hexagon Shapefile of the Study Area
+- Sentinel 2 Satellite Images (September 7 & 23, 2023)
+- Landsat 8/9 Satellite Images (September 18 & August 25, 2023)
+- Geofabrik OSM shapefiles
+- Humanitarian Data Exchange Portal:
+  1. buildings
+  2. education facilities
+  3. health facilities
+  4. points of interest
+  5. populated places
+  6. waterways
+  7. financial service
+  8. roads
+
+### 5. Scope of Work
+
+- Selection of project focus and conducting literature review.
+- Preparing proposal and project website.
+- Data collection, extraction, integration, transformation and wrangling.
+- Designing and building GIS model and database.
+- Performing GIS LULC analysis.
+- Proposing strategic strategies based on GIS LULC analysis.
+- Preparing poster and project webpage.
+
+### 6. Schedule
+![Project Schedule](images/project_schedule.png)

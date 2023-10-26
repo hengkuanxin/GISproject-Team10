@@ -13,6 +13,8 @@ website:
         text: About
       - href: report.qmd
         text: Report
+      - href: results.qmd
+        text: Results and Discussion
 
 format:
   html:
