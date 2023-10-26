@@ -4,7 +4,7 @@ project:
 website:
   title: "AY2023/24S1 Team 10"
   navbar:
-    background: dark
+    background: primary
     search: True
     left:
       - href: index.qmd
