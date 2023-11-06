@@ -15,6 +15,12 @@ website:
         text: Report
       - href: results.qmd
         text: Results and Discussion
+      - text: "Webmaps"
+        menu: 
+          - text: "Punggol Pre-school Distibution"
+            href: qgis2web/index.html
+          - text: "Derna 3D Model"
+            href: qgis2threejs/index.html
 
 format:
   html:
