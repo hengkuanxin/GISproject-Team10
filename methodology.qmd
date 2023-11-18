@@ -78,8 +78,7 @@ We will now download the Sentinel 2 satellite images from the Copernicus Open Ac
 
 ![](images/Methodology/Picture7.png){fig-align="center"}
 
-7.     Download the following datasets by clicking on the
-download icon:
+7.     Download the following datasets by clicking on the download icon:
 
 ![Satellite Images taken on 22/09/2023, after the flood.](images/Methodology/Picture8.png){fig-align="center"}
 
@@ -95,7 +94,7 @@ download icon:
 
 We will now download Landsat 8 and 9 satellite images from the Earth Explorer.
 
- 1. Create a new subfolder called `Landsat 8/9` under the `GeoTiff` folder.
+1.  Create a new subfolder called `Landsat 8/9` under the `GeoTiff` folder.
 
 2.  Go to <https://earthexplorer.usgs.gov/>.
 
@@ -103,135 +102,135 @@ We will now download Landsat 8 and 9 satellite images from the Earth Explorer.
 
 ![](images/Methodology/Picture10.png){fig-align="center"}
 
-4.	Scroll down the tab and set the Date Range from **08/25/2023 to 09/19/2023**.
+4.  Scroll down the tab and set the Date Range from **08/25/2023 to 09/19/2023**.
 
 ![](images/Methodology/Picture11.png){fig-align="center"}
 
-5.	Scroll down the tab and set the **cloud cover range to 30%**.
+5.  Scroll down the tab and set the **cloud cover range to 30%**.
 
 ![](images/Methodology/Picture12.png){fig-align="center"}
 
-6.	For coordinates, click on Use Map.
+6.  For coordinates, click on Use Map.
 
 ![](images/Methodology/Picture13.png){fig-align="center"}
 
-7.	Click on the Data Sets tab.
+7.  Click on the Data Sets tab.
 
 ![](images/Methodology/Picture14.png){fig-align="center"}
 
-8.	Select the **Landsat 8-9 OLI/TIRS C2 L1** data set:
+8.  Select the **Landsat 8-9 OLI/TIRS C2 L1** data set:
 
 ![](images/Methodology/Picture15.png){fig-align="center"}
 
-9.	Click on the Results panel.
+9.  Click on the Results panel.
 
 ![](images/Methodology/Picture16.png){fig-align="center"}
 
-10.	Download the following data sets:
+10. Download the following data sets:
 
 ![](images/Methodology/Picture17.png){fig-align="center"}
 
 ![](images/Methodology/Picture18.png){fig-align="center"}
 
-11.	Under the download options, select Download All Files.
+11. Under the download options, select Download All Files.
 
 ![](images/Methodology/Picture19.png){fig-align="center"}
 
-12.	Create the following subfolders in the `Landsat 8/9` folder, and save your downloaded data into them respectively:
+12. Create the following subfolders in the `Landsat 8/9` folder, and save your downloaded data into them respectively:
 
 -   `Landsat 8 (25-08-2023)`
 
 -   `Landsat 9 (18-09-2023)`
 
-#### 3.1.4	Collecting DEM Images
+#### 3.1.4 Collecting DEM Images
 
 We will now download Digital Elevation Model from the Earth Explorer.
 
-1.	Create a new subfolder called `DEM` under the `GeoTiff` folder.
+1.  Create a new subfolder called `DEM` under the `GeoTiff` folder.
 
-2.	Go to <https://earthexplorer.usgs.gov/>.
+2.  Go to <https://earthexplorer.usgs.gov/>.
 
-3.	Repeat the same steps as above, however, do not set the date range. Instead, select **SRTM 1 ARC- Second Global** as the dataset:
+3.  Repeat the same steps as above, however, do not set the date range. Instead, select **SRTM 1 ARC- Second Global** as the dataset:
 
 ![](images/Methodology/Picture20.png){fig-align="center"}
 
-4.	Click on the Results panel and only one result is returned.
+4.  Click on the Results panel and only one result is returned.
 
 ![](images/Methodology/Picture21.png){fig-align="center"}
 
-5.	Download the data set **SRTM1N32E022V3** and move the contents into the `DEM` subfolder.
+5.  Download the data set **SRTM1N32E022V3** and move the contents into the `DEM` subfolder.
 
-#### 3.1.5	 Collecting Derna Hexagon Shapefile
+#### 3.1.5 Collecting Derna Hexagon Shapefile
 
 **Derna_city_250m_hexagon** comprises a collection of 250m hexagons defining the study area. It is in a ESRI shapefile format and is available in the GIS project folder of eLearn (SMU's learning portal.)
 
 Download the Derna Hexagon Shapefile **provided in E-learn** and save it into the folder called `data`.
 
-#### 3.1.6	Collecting the FAO Soil Map Data set  
+#### 3.1.6 Collecting the FAO Soil Map Data set
 
 We will now download FAO/ UNESCO Soil Map of the World from FAO.
 
-1.	Create a subfolder named `Soil` under the folder `data`.
+1.  Create a subfolder named `Soil` under the folder `data`.
 
-2.	Go to <https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/home>.
+2.  Go to <https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/home>.
 
 ![](images/Methodology/Picture22.png){fig-align="center"}
 
-3.	Under Search type "Digital Soil Map of the World"
+3.  Under Search type "Digital Soil Map of the World"
 
 ![](images/Methodology/Picture23.png){fig-align="center"}
 
-4.	Download the ESRI shapefile.
+4.  Download the ESRI shapefile.
 
-5.	A new folder called `DSMW` will be added to the Downloads folder. Copy the contents over to the `Soil` folder.
+5.  A new folder called `DSMW` will be added to the Downloads folder. Copy the contents over to the `Soil` folder.
 
 ![](images/Methodology/Picture24.png){fig-align="center"}
 
-### 3.2 Data Wrangling 
+### 3.2 Data Wrangling
 
-#### 3.2.1 Processing Raster Layers 
+#### 3.2.1 Processing Raster Layers
 
 Before we can proceed with the SCP Classification, we must first process the raster layers obtained from the satellite imagery sources. This is a necessary step as variation exists in terms of the area covered by the raster layers. For example, the Landsat 8, Landsat 9, and Sentinel-2 raster layers encompass a large area which extends beyond the boundaries of Derna, our focal area. Conversely, the Maxar raster layers require merging to cover the entirety of Derna. Therefore, processing the raster layers is a crucial preliminary step as it sets the foundation for a reliable and targeted dataset essential for effective SCP classification of Derna.
 
-#### 3.2.1	Add Raster Layers
+#### 3.2.1 Add Raster Layers
 
-1.	From Layer \> Add Layer \> Add Raster Layer
+1.  From Layer \> Add Layer \> Add Raster Layer
 
 ![](images/Methodology/Picture25.png){fig-align="center"}
 
-2.	Click on the ![](images/Methodology/Picture26.png){width="27" height="31"} icon.
+2.  Click on the ![](images/Methodology/Picture26.png){width="27" height="31"} icon.
 
-3.	Navigate to the `Sentinel-2B, 7/09/2023` folder in your computer's repository.
+3.  Navigate to the `Sentinel-2B, 7/09/2023` folder in your computer's repository.
 
-4.	From `Sentinel-2B, 7/09/2023 > GRANULE > L2A_T34SFB_A033967_20230907T091849 > IMG_DATA > 10m` \> Select `B02-B08_10m.jp2 layers` and click on open.
+4.  From `Sentinel-2B, 7/09/2023 > GRANULE > L2A_T34SFB_A033967_20230907T091849 > IMG_DATA > 10m` \> Select `B02-B08_10m.jp2 layers` and click on open.
 
 ![](images/Methodology/Picture27.png){fig-align="center"}
 
-5.	Click on the ![](images/Methodology/Picture28.png){width="156"} button to add the raster layers
+5.  Click on the ![](images/Methodology/Picture28.png){width="156"} button to add the raster layers
 
 The layers will be added into the Layers panel
 
 ![](images/Methodology/Picture29.png){fig-align="center"}
 
-3.2.2	Clip Raster Layers
+3.2.2 Clip Raster Layers
 
-1.	From Raster \> Extraction \> Clip Raster by Mask Layer
+1.  From Raster \> Extraction \> Clip Raster by Mask Layer
 
 ![](images/Methodology/Picture30.png){fig-align="center"}
 
-2.	For Input Layer put `T34SFB_20230907T090559_B02_10m` layer
+2.  For Input Layer put `T34SFB_20230907T090559_B02_10m` layer
 
-3.	For Clipping extent select Calculate from Layer and put the `Derna_city_250m_hexagon` layer
+3.  For Clipping extent select Calculate from Layer and put the `Derna_city_250m_hexagon` layer
 
 ![](images/Methodology/Picture31.png){fig-align="center"}
 
-4.	Click Run
+4.  Click Run
 
-5.	A new virtual layer called `Clipped (extent)` will be added into the layers panel. Export it as a Geotiff under the name: `T34SFB_07-09-2023_T090559_B02_10m`. Create a new subfolder named `07-09-2023 Clipped` in `GeoTiff > Sentinel`. Create 3 other subfolders in `07-09-2023 Clipped` called `10m`, `20m`, `60m`, and save the corresponding band number to the respective folder.
+5.  A new virtual layer called `Clipped (extent)` will be added into the layers panel. Export it as a Geotiff under the name: `T34SFB_07-09-2023_T090559_B02_10m`. Create a new subfolder named `07-09-2023 Clipped` in `GeoTiff > Sentinel`. Create 3 other subfolders in `07-09-2023 Clipped` called `10m`, `20m`, `60m`, and save the corresponding band number to the respective folder.
 
 ![](images/Methodology/Picture32.png){fig-align="center"}
 
-6.	Repeat the process for the following Sentinel-2B raster layers:
+6.  Repeat the process for the following Sentinel-2B raster layers:
 
 -   T34SFB_20230907T090559_B03_10m
 
@@ -255,37 +254,37 @@ The layers will be added into the Layers panel
 
 -   T34SFB_20230907T090559_B09_60m
 
-7.	Create a new subfolder under the `GeoTiff > Sentinel` called `22-09-2023 Clipped`. Create 3 other subfolders in `22-09-2023 Clipped` called `10m`, `20m`, `60m`, and save the corresponding band number to the respective folder.
+7.  Create a new subfolder under the `GeoTiff > Sentinel` called `22-09-2023 Clipped`. Create 3 other subfolders in `22-09-2023 Clipped` called `10m`, `20m`, `60m`, and save the corresponding band number to the respective folder.
 
-8.	Create two new subfolders under the `GeoTiff > Landsat 8/9` called `Landsat 9 (18-09-2023) Clipped` and `Landsat 8 (25-08-2023)`, respectively.
+8.  Create two new subfolders under the `GeoTiff > Landsat 8/9` called `Landsat 9 (18-09-2023) Clipped` and `Landsat 8 (25-08-2023)`, respectively.
 
 ![](images/Methodology/Picture33.png){fig-align="center"}
 
-9.	Repeat the steps in **Sections 3.2.1 & 3.2.2** for the `Sentinel 2A, 22/09/2023`, `Landsat 9 (18-09-2023)`, `Landsat 8 (25-08-2023)` datasets, saving them into their respective "Clipped" folders.
+9.  Repeat the steps in **Sections 3.2.1 & 3.2.2** for the `Sentinel 2A, 22/09/2023`, `Landsat 9 (18-09-2023)`, `Landsat 8 (25-08-2023)` datasets, saving them into their respective "Clipped" folders.
 
-#### 3.2.3	Merge GeoEye-1 Raster Layers
+#### 3.2.3 Merge GeoEye-1 Raster Layers
 
-1.	Create two new subfolders under the `GeoTiff > Geoeyes-1` called `01-07-2023 Clipped` and `13-09-2023 Clipped`, respectively.
+1.  Create two new subfolders under the `GeoTiff > Geoeyes-1` called `01-07-2023 Clipped` and `13-09-2023 Clipped`, respectively.
 
-2.	Add in all `01-07-2023` raster layers by repeating the steps in **Section 3.2.1**
+2.  Add in all `01-07-2023` raster layers by repeating the steps in **Section 3.2.1**
 
 ![](images/Methodology/Picture34.png){fig-align="center"}
 
-3.	From Raster \> Miscellaneous \> Merge
+3.  From Raster \> Miscellaneous \> Merge
 
 ![](images/Methodology/Picture35.png){fig-align="center"}
 
-4.	For input layer select all the 01-07-2023 raster layers
+4.  For input layer select all the 01-07-2023 raster layers
 
 ![](images/Methodology/Picture36.png){fig-align="center"}
 
-5.	Click on Run.
+5.  Click on Run.
 
-6.	A new virtual layer called `Merged` will be added into the layers panel. Export it as a GeoTiff named `01-07-2023 Merged` and save it in the `01-07-2023 Clipped` folder.
+6.  A new virtual layer called `Merged` will be added into the layers panel. Export it as a GeoTiff named `01-07-2023 Merged` and save it in the `01-07-2023 Clipped` folder.
 
 Repeat the steps in **Section 3.2.3** for the `13-09-2023` raster layers. Save the new merged layer as `13-09-2023 Merged` in the `13-09-2023 Clipped` folder.
 
-#### 3.2.4	 Clipping Study Area
+#### 3.2.4 Clipping Study Area
 
 To focus our analysis within the boundary of Derna, we will clip the merged raster of the GeoEye-1 images before moving on.
 
@@ -297,23 +296,23 @@ Your clipped layers should look like the following:
 
 ![13-09-2023 Clipped](images/Methodology/Picture38.png){fig-align="center"}
 
-## 4.	Creating Composite Images 
+## 4. Creating Composite Images
 
-### 4.1	GeoEye-1 Composite Images
+### 4.1 GeoEye-1 Composite Images
 
-#### 4.1.1 	GeoEye-1 Natural Color Image
+#### 4.1.1 GeoEye-1 Natural Color Image
 
 Natural Color Composite images illustrate the terrain based on how it looks like onboard the satellite platform looking down on the respective target size, which is Derna in this case.
 
-1.	Right click on the `01-07-2023 Merged` Raster \> **Properties**
+1.  Right click on the `01-07-2023 Merged` Raster \> **Properties**
 
 ![](images/Methodology/Picture39.png){fig-align="center"}
 
-2.	From information \> Symbology
+2.  From information \> Symbology
 
 ![](images/Methodology/Picture40.png){fig-align="center"}
 
-3.	Select the following band combination and click OK
+3.  Select the following band combination and click OK
 
 -   For **Red** band select **Band 3**
 
@@ -365,11 +364,11 @@ Where:
 
 Click on the Processing Toolbox icon ![](images/Methodology/Picture45.png){width="27"}
 
-1.	Search for "**Raster Calculator**" and open the tool
+1.  Search for "**Raster Calculator**" and open the tool
 
 ![](images/Methodology/Picture46.png){fig-align="center"}
 
-2.	For Expression input the following:
+2.  For Expression input the following:
 
 `("01-07-2023 Merged@4"-"01-07-2023 Merged@2)/("01-07-2023 Merged@4"+"01-07-2023 Merged@2")`
 
@@ -385,15 +384,15 @@ The following layer should be generated:
 
 We will now adjust the symbology
 
-3.	Right Click on GNDVI \> Properties \> Symbology \> **Singleband pseduocolor**
+3.  Right Click on GNDVI \> Properties \> Symbology \> **Singleband pseduocolor**
 
 ![](images/Methodology/Picture49.png){fig-align="center"}
 
-4.	For Color ramp: Select **Greens**
+4.  For Color ramp: Select **Greens**
 
 ![](images/Methodology/Picture50.png){fig-align="center"}
 
-5.	For mode set it to **Equal Interval** and set **Classes** to **4**
+5.  For mode set it to **Equal Interval** and set **Classes** to **4**
 
 ![](images/Methodology/Picture51.png){fig-align="center"}
 
@@ -401,7 +400,7 @@ You will get the following result:
 
 ![](images/Methodology/Picture52.png){fig-align="center"}
 
-6.	Export the `Output` layer as a GeoTiff called `GNDVI` and save it in the `01-07-2023 Clipped` folder.
+6.  Export the `Output` layer as a GeoTiff called `GNDVI` and save it in the `01-07-2023 Clipped` folder.
 
 #### 4.1.4 GeoEye-1 Renormalized Difference Vegetation Index (RDVI)
 
@@ -437,7 +436,7 @@ You will get the following layer:
 
 3.  Export the `Output` layer as a GeoTiff called `RDVI` and save it in the `01-07-2023 Clipped` folder.
 
-#### 4.1.5	GeoEye-1 Ferric Iron, 3+ 
+#### 4.1.5 GeoEye-1 Ferric Iron, 3+
 
 The roots of plants absorb Iron (Fe) from the soil as either ferrous (Fe2+) or ferric (Fe3+) ions. Fe is essential for healthy vegetation as it plays an essential role in photosynthesis, respiration, and nitrogen-fixation as nitrogen-fixing bacteria use it for enzymatic reactions (The Fertilizer Institute, n.d.).
 
@@ -483,15 +482,15 @@ Repeat the steps from **Sections 4.1.1 -- 4.1.4** for the `13-09-2023 Merged` ra
 
 `("13-09-2023 Merged@4"-"13-09-2023 Merged@3")/(("13-09-2023 Merged@4"+"13-09-2023 Merged@3"))^0.5`
 
-### 4.2	Sentinel-2 Composite Images
+### 4.2 Sentinel-2 Composite Images
 
-#### 4.2.1 	Natural Color (4-3-2)
+#### 4.2.1 Natural Color (4-3-2)
 
-1.	From SCP \> Band set
+1.  From SCP \> Band set
 
 ![](images/Methodology/Picture55.png){fig-align="center"}
 
-2.	Select the `T34SFB_07-09-2023_T090559_B0_10m` layer and add it to the band set using the ![](images/Methodology/Picture56.png){width="31"} icon. Add the other bands in the following order:
+2.  Select the `T34SFB_07-09-2023_T090559_B0_10m` layer and add it to the band set using the ![](images/Methodology/Picture56.png){width="31"} icon. Add the other bands in the following order:
 
 -   T34SFB_07-09-2023_T090559_B02_10m
 
@@ -521,13 +520,13 @@ You will get the following result:
 
 ![](images/Methodology/Picture58.png){fig-align="center"}
 
-3.	For Wavelength Quick settings select **Sentinel-2 \[bands 1,2,3,4,5,6,7,8,8A,9,11,12\]**
+3.  For Wavelength Quick settings select **Sentinel-2 \[bands 1,2,3,4,5,6,7,8,8A,9,11,12\]**
 
 ![](images/Methodology/Picture59.png){fig-align="center"}
 
-4.	Click Run and close the SCP tab
+4.  Click Run and close the SCP tab
 
-5.	Under **RGB input: '4-3-2'** to get the natural color
+5.  Under **RGB input: '4-3-2'** to get the natural color
 
 ![](images/Methodology/Picture60.png){fig-align="center"}
 
@@ -693,7 +692,7 @@ You will get the following result:
 
 Export the `Virtual Band Set 1` layer as a Rendered Image called `Natural Color (4-3-2)` and save it in a new subfolder under `GeoTiff > Landsat 8/9` named `Landsat 8 (25-08-2023) - Images`.
 
-#### 4.3.2 	False Color Composite (5-4-3)
+#### 4.3.2 False Color Composite (5-4-3)
 
 -   Repeat the steps in **Section 4.3.1** but set **RGB to 5-4-3**
 
@@ -703,7 +702,7 @@ You will get the following result:
 
 1.  Export the `Virtual Band Set 1` layer as a Rendered Image called `False Color Infrared (5-4-3)` and save it in `Landsat 8 (25-08-2023) - Images`.
 
-#### 4.3.3 	Geology (7-6-2)
+#### 4.3.3 Geology (7-6-2)
 
 -   Repeat the steps in **Section 4.3.1** but set **RGB to 7-6-2**
 
@@ -713,7 +712,7 @@ You will get the following result:
 
 Export the `Virtual Band Set 1` layer as a Rendered Image called `Geology (7-6-2)` and save it in `Landsat 8 (25-08-2023) - Images`.
 
-#### 4.3.4 	Normalised Difference Vegetation Index (NDVI)
+#### 4.3.4 Normalised Difference Vegetation Index (NDVI)
 
 The NDVI quantifies vegetation by measuring the difference between short wave infrared (SWIR) near-infrared (NIR). The formula is as follows:
 
@@ -751,7 +750,7 @@ You will get the following result:
 
 6.  Export the `Output` layer as a Rendered Image called `NDVI` and save it in `Landsat 8 (25-08-2023) - Images`.
 
-#### 4.3.5 	Moisture Index
+#### 4.3.5 Moisture Index
 
 The moisture index uses the visible and Short Wave Infrared (SWIR) and Thermal to generate an index of moisture content. Wetter vegetation has higher values while lower values indicate that plants are under stress from insufficient moisture (GISGeography, 2023).
 
@@ -799,33 +798,33 @@ Repeat the steps from **Sections 4.3.1 -- 4.3.5** for `Landsat 9 (18-09-2023) Cl
 
 `("LC09_L1TP_182037_2023-09-18_T1_B5@1" - "LC09_L1TP_182037_2023-09-18_T1_B6@1")/("LC09_L1TP_182037_2023-09-18_T1_B5@1" + "LC09_L1TP_182037_2023-09-18_T1_B6@1")`
 
-### 4.4 Soil Composition Analysis 
+### 4.4 Soil Composition Analysis
 
 #### 4.4.1 Selecting Derna's Soil Layer
 
-1.	From Layer \> Add Layer \> Add Vector Layer
+1.  From Layer \> Add Layer \> Add Vector Layer
 
 ![](images/Methodology/Picture79.png){fig-align="center"}
 
-2.	Click on the ![](images/Methodology/Picture80.png){width="22"} icon.
+2.  Click on the ![](images/Methodology/Picture80.png){width="22"} icon.
 
-3.	Navigate to the `Soil` folder in your computer's repository.
+3.  Navigate to the `Soil` folder in your computer's repository.
 
-4.	From Soil \> DSMW \> Select `DSMW.shp` layer and click on open.
+4.  From Soil \> DSMW \> Select `DSMW.shp` layer and click on open.
 
 ![](images/Methodology/Picture81.png){fig-align="center"}
 
-5.	The DSMW vector layer will be added to the layers panel.
+5.  The DSMW vector layer will be added to the layers panel.
 
 ![](images/Methodology/Picture82.png){fig-align="center"}
 
-6.	Right click on the DSMW layer \> **Open Attribute Table**
+6.  Right click on the DSMW layer \> **Open Attribute Table**
 
 ![](images/Methodology/Picture83.png){fig-align="center"}
 
-7.	Click on the **Select by Expression** icon ![](images/Methodology/Picture84.png){width="28" height="27"}
+7.  Click on the **Select by Expression** icon ![](images/Methodology/Picture84.png){width="28" height="27"}
 
-8.	Under Expression input the following: `COUNTRY = 'LIBYA'` and click on "**Select Features**".
+8.  Under Expression input the following: `COUNTRY = 'LIBYA'` and click on "**Select Features**".
 
 ![](images/Methodology/Picture85.png){fig-align="center"}
 
@@ -833,25 +832,25 @@ The following area will be selected:
 
 ![](images/Methodology/Picture86.png){fig-align="center"}
 
-9.	Right click on the DSMW layer \> Export \> **Save Selected Features As...**
+9.  Right click on the DSMW layer \> Export \> **Save Selected Features As...**
 
-o	Save it as a GeoPackage under the name `Libya_Soil` and set the CRS to `EPSG:4326 – WGS 84`
+o Save it as a GeoPackage under the name `Libya_Soil` and set the CRS to `EPSG:4326 – WGS 84`
 
 ![](images/Methodology/Picture87.png){fig-align="center"}
 
 ![](images/Methodology/Picture88.png){fig-align="center"}
 
-10.	Bring the `Derna_city_250m hexagon` layer to the top of the layers panel
+10. Bring the `Derna_city_250m hexagon` layer to the top of the layers panel
 
 ![](images/Methodology/Picture89.png){fig-align="center"}
 
 As the `Libya_Soil` extends beyond the administrative boundaries of Derna, we will need to clip the `Libya_Soil` layer.
 
-11.	From Vector \> Geoprocessing Tools \> **Clip**
+11. From Vector \> Geoprocessing Tools \> **Clip**
 
 ![](images/Methodology/Picture90.png){fig-align="center"}
 
-12.	Input the following Parameters:
+12. Input the following Parameters:
 
 -   For Input Layer set `Libya_Soil` layer
 
@@ -867,15 +866,15 @@ The following layer will be generated:
 
 13. Export the `Clipped` layer as a GeoPackage called `Derna_Soil Classification` and save it in the `Soil` subfolder in the `GeoTiff` folder.
 
-#### 4.4.2	Classifying Derna's Soil Layer
+#### 4.4.2 Classifying Derna's Soil Layer
 
-1.	Open the **Attribute Table** of the `Derna_Soil Classification` layer.
+1.  Open the **Attribute Table** of the `Derna_Soil Classification` layer.
 
 ![](images/Methodology/Picture93.png){fig-align="center"}
 
 Based on the above, the FAOSOIL value is 'I-Bv-Lc-2/3ab'.
 
-2.	Navigate to the `DSMW` folder in your data repository and open the '`readme.doc`'
+2.  Navigate to the `DSMW` folder in your data repository and open the '`readme.doc`'
 
 ![](images/Methodology/Picture94.png){fig-align="center"}
 
@@ -901,7 +900,7 @@ The dominant soil type of Derna is Lithosols, while Vertic Cambisols and Chromic
 
 Prior to conducting the Land Use Land Cover Change (LULC) classification, it is vital that the composite images are examined to gain a better understanding of the land cover changes caused by the flood. This understanding will enable visual identification of errors without constantly needing to meticulously examine the quantifiable metrics.
 
-#### 5.1.1 Natural Color Images 
+#### 5.1.1 Natural Color Images
 
 ![**Figure 7:** Landsat 8/9, Sentinel-2 & GeoEye-1 Natural Color Images Before and After the Flood](images/Methodology/Picture97.png){fig-align="center"}
 
@@ -925,11 +924,9 @@ The pre-flood images in Figures 9 and 10, depicts dense vegetation alongside the
 
 The pre-flood geological features of Derna in Figure 11 depicts a dense concentration of geological structures located away from the urban area, which is located along the coastline. The mountainous terrain exhibits a variety of geological characteristics, which is illustrated by the varying intensity of the yellow color. The post-flood images exhibit a more well-defined geological structure, indicating that the flood may have exposed underlying formations through erosion enabled by natural processes such as chemical weathering^1^.
 
-^1^Chemical weathering refers to the chemical decomposition of rocks in situ by
-natural agents at the earth\'s surface which causes rocks to be weakened and
-land to be made more permeable, making it more susceptible to erosion.
+^1^Chemical weathering refers to the chemical decomposition of rocks in situ by natural agents at the earth's surface which causes rocks to be weakened and land to be made more permeable, making it more susceptible to erosion.
 
-#### 5.1.4	 Moisture Index Images
+#### 5.1.4 Moisture Index Images
 
 ![**Figure 12:** Landsat 8/9 & Sentinel-2 Geology Images Before and After the Flood](images/Methodology/Picture102.png){fig-align="center"}
 
@@ -957,63 +954,63 @@ We will classify the land cover based on the following categories:
 
 ![](images/Methodology/Picture105.png){fig-align="center"}
 
-1.	Waterbody: sea, coastal water
+1.  Waterbody: sea, coastal water
 
-2.	Bareland: Open land, rock
+2.  Bareland: Open land, rock
 
-3.	Vegetation: Farmland, Natural Vegetation
+3.  Vegetation: Farmland, Natural Vegetation
 
-4.	Built-up: Buildings, Residentials, Factories
+4.  Built-up: Buildings, Residentials, Factories
 
-5.	Impervious Surface: Roads, Concrete
+5.  Impervious Surface: Roads, Concrete
 
-6.	Cloud
+6.  Cloud
 
-7.	Shadow
+7.  Shadow
 
 #### 5.2.2 Selecting Training & Test Sets (Before Flood)
 
 We will now create 2 sets of samples to be used to train and test our classification model. As the classification will require creating many ESRI shapefile files, we must ensure we practice good file management.
 
-1.	Create a folder called `LULC`.
+1.  Create a folder called `LULC`.
 
-2.	Within `LULC`, create a sub-folder called `shapefile`.
+2.  Within `LULC`, create a sub-folder called `shapefile`.
 
-3.	Inside `shapefile` create 3 sub-folders called `before_flood`, `after_flood`, and `classification`.
+3.  Inside `shapefile` create 3 sub-folders called `before_flood`, `after_flood`, and `classification`.
 
 **Note**: it is very important that our folders' names **do not contain any spaces**; if you have any space in your folders' names, replace it with an underscore.
 
-1.	Return to QGIS. From Layer \> Create Layer \> select New Shapefile Layer...
+1.  Return to QGIS. From Layer \> Create Layer \> select New Shapefile Layer...
 
 ![](images/Methodology/Picture106.png){fig-align="center"}
 
-2.	Fill in the details as follows:
+2.  Fill in the details as follows:
 
 ![](images/Methodology/Picture107.png){fig-align="center"}
 
 Note: save the new file under `shapefile > before_flood` as `sample_before`.
 
-3.	Once done, click on OK and the new layer will be added to our project.
+3.  Once done, click on OK and the new layer will be added to our project.
 
-4.	Select on the layer and click on **toggle editing**, then click on the tool called **Add Point Feature**:
+4.  Select on the layer and click on **toggle editing**, then click on the tool called **Add Point Feature**:
 
 ![](images/Methodology/Picture108.png){fig-align="center"}
 
 We will now create a sample point on our map, referencing the multi-spectral composite layers `before the flood, 01-07-2023` we created earlier, such as the False Color Composite.
 
-5.	Click on the following red point on the map and fill in the details as follows:
+5.  Click on the following red point on the map and fill in the details as follows:
 
 ![](images/Methodology/Picture109.png){fig-align="center"}
 
 This signifies that we have created a sample point at that location and given it a land cover class 1, referring to that of a waterbody in our land cover scheme.
 
-6.	Repeat this step until we get a total of **50 sample points** **for each land cover class**. Since there are no clouds and shadows present before the flood, we can skip them for now.
+6.  Repeat this step until we get a total of **50 sample points** **for each land cover class**. Since there are no clouds and shadows present before the flood, we can skip them for now.
 
 You should have a total of 250 sample points representing a total of 5 different land cover classes, as shown:
 
 ![](images/Methodology/Picture110.png){fig-align="center"}
 
-7.	Before we continue, repeat the steps to create another vector layer called `test_before`, and create a total of 250 test points, while ensuring that our test points do not overlap with the sample points, as shown below (in green):
+7.  Before we continue, repeat the steps to create another vector layer called `test_before`, and create a total of 250 test points, while ensuring that our test points do not overlap with the sample points, as shown below (in green):
 
 ![](images/Methodology/Picture111.png){fig-align="center"}
 
@@ -1021,43 +1018,43 @@ You should have a total of 250 sample points representing a total of 5 different
 
 Now, we will segment the image using a clustering algorithm called "mean shift" to automatically identify objects present in the image.
 
-1.	Click on the processing toolbox, and open the function called "**Segmentation**", and fill in the details as follows:
+1.  Click on the processing toolbox, and open the function called "**Segmentation**", and fill in the details as follows:
 
 ![](images/Methodology/Picture112.png){fig-align="center"}
 
 ![](images/Methodology/Picture113.png){fig-align="center"}
 
-2.	Scroll down and ensure we check the checkbox "**8-neighbor connectivity**".
+2.  Scroll down and ensure we check the checkbox "**8-neighbor connectivity**".
 
 ![](images/Methodology/Picture114.png){fig-align="center"}
 
-3.	Select output file and save it as a shapefile `segmentation_before.shp` under the folder `shapefile > before_flood`.
+3.  Select output file and save it as a shapefile `segmentation_before.shp` under the folder `shapefile > before_flood`.
 
 ![](images/Methodology/Picture115.png){fig-align="center"}
 
-4.	Leave all other options as their default values and click on run. This program might take a few minutes.
+4.  Leave all other options as their default values and click on run. This program might take a few minutes.
 
 Once done, a the following vector layer will be added to the layers panel.
 
 ![](images/Methodology/Picture116.png){fig-align="center"}
 
-5.	Next, open the processing tool called **ZonalStatistics**, and fill in the details as follows:
+5.  Next, open the processing tool called **ZonalStatistics**, and fill in the details as follows:
 
 ![](images/Methodology/Picture117.png){fig-align="center"}
 
 ![](images/Methodology/Picture118.png){fig-align="center"}
 
-6.	Ensure that you save the output file into the same folder, calling it `segmentation_stats_before.shp`. Click on Run.
+6.  Ensure that you save the output file into the same folder, calling it `segmentation_stats_before.shp`. Click on Run.
 
 Once done, we get a new layer as shown below:
 
 ![](images/Methodology/Picture119.png){fig-align="center"}
 
-7.	Open the attribute table of this layer, and we observe 4 sets of statistics, calculated from the 4 bands present in our GeoEye-1 data.
+7.  Open the attribute table of this layer, and we observe 4 sets of statistics, calculated from the 4 bands present in our GeoEye-1 data.
 
 ![](images/Methodology/Picture120.png){fig-align="center"}
 
-8.	We will now use our sample set to select the segments (objects). Open the processing tool called **Join attributes by location** and fill in the details as follows:
+8.  We will now use our sample set to select the segments (objects). Open the processing tool called **Join attributes by location** and fill in the details as follows:
 
 ![](images/Methodology/Picture121.png){fig-align="center"}
 
@@ -1067,13 +1064,13 @@ Once done, we get a new layer as shown below:
 
 ![](images/Methodology/Picture124.png){fig-align="center"}
 
-9.	Specify the output file as a shapefile called `sample_stats_before.shp` saved under the folder `shapefile> before_flood`. Click on Run.
+9.  Specify the output file as a shapefile called `sample_stats_before.shp` saved under the folder `shapefile> before_flood`. Click on Run.
 
 Once done, we get a layer as follows, note that the sample points we created before are now covered by small segments.
 
 ![](images/Methodology/Picture125.png){fig-align="center"}
 
-10.	Repeat this step with the test samples, using `test_before` as the input file, and save the output as `test_stats_before.shp` under the folder `shapefile> before_flood`. Click on Run.
+10. Repeat this step with the test samples, using `test_before` as the input file, and save the output as `test_stats_before.shp` under the folder `shapefile> before_flood`. Click on Run.
 
 You will get the following result:
 
@@ -1083,7 +1080,7 @@ You will get the following result:
 
 We will now train the classification model.
 
-1.	Open the tool called **TrainVectorClassifier** and fill in the details as shown:
+1.  Open the tool called **TrainVectorClassifier** and fill in the details as shown:
 
 ![](images/Methodology/Picture127.png){fig-align="center"}
 
@@ -1095,13 +1092,13 @@ We will now train the classification model.
 
 ![](images/Methodology/Picture131.png){fig-align="center"}
 
-2.	Save the output file as `OBIA_model_before.model` under the file `shapefile > classification`.
+2.  Save the output file as `OBIA_model_before.model` under the file `shapefile > classification`.
 
-3.	Once done, click on Run. We do not get a new layer output this time.
+3.  Once done, click on Run. We do not get a new layer output this time.
 
 #### 5.2.5 Classification (Before Flood)
 
-1.	After that, open the tool called **VectorClassifier** and fill in the details as shown:
+1.  After that, open the tool called **VectorClassifier** and fill in the details as shown:
 
 ![](images/Methodology/Picture132.png){fig-align="center"}
 
@@ -1111,15 +1108,15 @@ We will now train the classification model.
 
 ![](images/Methodology/Picture135.png){fig-align="center"}
 
-2.	Save the output file as `SVM_classification_output_before.shp` under the folder `shapefiles > classification`. Once done, click on Run.
+2.  Save the output file as `SVM_classification_output_before.shp` under the folder `shapefiles > classification`. Once done, click on Run.
 
 The output file is not automatically added to our project this time.
 
-3.	Navigate to the classification output file and import it into our project. We get a layer as shown below:
+3.  Navigate to the classification output file and import it into our project. We get a layer as shown below:
 
 ![](images/Methodology/Picture136.png){fig-align="center"}
 
-4.	Navigate to properties of this layer, and select the options as shown below:
+4.  Navigate to properties of this layer, and select the options as shown below:
 
 ![](images/Methodology/Picture137.png){fig-align="center"}
 
@@ -1127,39 +1124,39 @@ The output file is not automatically added to our project this time.
 
 Categorised by the predicted value, there will be 5 different classes representing the land cover types defined earlier.
 
-5.	Click on Apply, and you should get something like this:
+5.  Click on Apply, and you should get something like this:
 
 ![](images/Methodology/Picture139.png){fig-align="center"}
 
-6.	Before continuing we must first dissolve the vector output so that all segments are grouped together by the land cover class. Select the vector tool and fill in the details as shown:
+6.  Before continuing we must first dissolve the vector output so that all segments are grouped together by the land cover class. Select the vector tool and fill in the details as shown:
 
 ![](images/Methodology/Picture140.png){fig-align="center"}
 
 ![](images/Methodology/Picture141.png){fig-align="center"}
 
-7.	Save the output file as a GeoPackage, and name it `SVM_classification_output_before_dissolved`. Once done, click on Run.
+7.  Save the output file as a GeoPackage, and name it `SVM_classification_output_before_dissolved`. Once done, click on Run.
 
 We get a new layer as shown:
 
 ![](images/Methodology/Picture142.png){fig-align="center"}
 
-8.	Repeat the steps and adjust the properties of the layer to get the following results:
+8.  Repeat the steps and adjust the properties of the layer to get the following results:
 
 ![](images/Methodology/Picture143.png){fig-align="center"}
 
-9.	Next, we will rasterize the layer. Open the tool Rasterize and fill in the details as shown:
+9.  Next, we will rasterize the layer. Open the tool Rasterize and fill in the details as shown:
 
 ![](images/Methodology/Picture144.png){fig-align="center"}
 
 ![](images/Methodology/Picture145.png){fig-align="center"}
 
-10.	Save the output file as TIF file, under the folder `GeoEye-1 > 1-07-2023 Clipped` as `SVM_classification_before.tif`. Click on Run.
+10. Save the output file as TIF file, under the folder `GeoEye-1 > 1-07-2023 Clipped` as `SVM_classification_before.tif`. Click on Run.
 
 You will get the following result:
 
 ![](images/Methodology/Picture146.png){fig-align="center"}
 
-11.	Repeat the above steps to manipulate the properties of this layer.
+11. Repeat the above steps to manipulate the properties of this layer.
 
 You will get the following result:
 
@@ -1169,13 +1166,13 @@ You will get the following result:
 
 Finally, we will use the Semi-Automatic Classification Plugin (SCP) tool to calculate the accuracy of the classification.
 
-1.	From SCP \> Postprocessing \> select **Accuracy**, and fill in the details as shown:
+1.  From SCP \> Postprocessing \> select **Accuracy**, and fill in the details as shown:
 
 ![](images/Methodology/Picture148.png){fig-align="center"}
 
 ![](images/Methodology/Picture149.png){fig-align="center"}
 
-2.	Click on Run. A dialog window pops up. Save the file as `SVM_classification_accuracy_before.tif` under the folder `shapefile > classification`.
+2.  Click on Run. A dialog window pops up. Save the file as `SVM_classification_accuracy_before.tif` under the folder `shapefile > classification`.
 
 ![](images/Methodology/Picture150.png){fig-align="center"}
 
@@ -1185,7 +1182,7 @@ Once done, the program takes a few seconds to run and gives us the following out
 
 The above result provides the area-based error matrix, as well as the overall accuracy and kappa hat value.
 
-#### 5.2.7	 Repeat the steps for another classification (After Flood)
+#### 5.2.7 Repeat the steps for another classification (After Flood)
 
 Repeat the processes in **Sections 5.2.2 -- 5.2.7**, using the files from `13-09-2023 Clipped` to classify the satellite image taken after the flood. Save the files into `shapefile > after_flood` and `classification`.
 
@@ -1205,21 +1202,21 @@ You will get the following results:
 
 Finally, we will use the SCP tool to create a raster layer highlighting the changes in land cover classes before and after the flood.
 
-1.	From SCP \> Postprocessing \> select **Land cover change**
+1.  From SCP \> Postprocessing \> select **Land cover change**
 
 ![](images/Methodology/Picture157.png){fig-align="center"}
 
-2.	Fill in the details as shown:
+2.  Fill in the details as shown:
 
 ![](images/Methodology/Picture158.png){fig-align="center"}
 
-3.	Once ready, click on Run. Save the output file under `shapefile > classification`, as `SVM_LULC_change.tif`. After a few seconds, the execution is complete, and we see a new raster layer added to our project:
+3.  Once ready, click on Run. Save the output file under `shapefile > classification`, as `SVM_LULC_change.tif`. After a few seconds, the execution is complete, and we see a new raster layer added to our project:
 
 ![](images/Methodology/Picture159.png){fig-align="center"}
 
 ![](images/Methodology/Picture160.png){fig-align="center"}
 
-4.	Adjust the properties of the new layer as shown:
+4.  Adjust the properties of the new layer as shown:
 
 ![](images/Methodology/Picture161.png){fig-align="center"}
 
@@ -1229,7 +1226,7 @@ Finally, we will use the SCP tool to create a raster layer highlighting the chan
 
 ![](images/Methodology/Picture164.png){fig-align="center"}
 
-5.	Click on Apply.
+5.  Click on Apply.
 
 We have now highlighted the extent of damages of the flood caused to different land cover classes, as shown below:
 
@@ -1241,9 +1238,9 @@ We have now highlighted the extent of damages of the flood caused to different l
 
 In this section, we will be creating a few other files separately. For good file management,
 
-1.	Create a folder called `SCP` in the `LULC` folder.
+1.  Create a folder called `SCP` in the `LULC` folder.
 
-2.	Next, create two sub-folders called `before_flood_sentinel` and `after_flood_sentinel` inside the `SCP` folder.
+2.  Next, create two sub-folders called `before_flood_sentinel` and `after_flood_sentinel` inside the `SCP` folder.
 
 We will now classify the Sentinel-2 satellite images using the SCP Plugin.
 
@@ -1257,21 +1254,21 @@ Ensure you have the following layers present in your project:
 
 -   `T34SFB_07-09-2023_T090559_B8_10m`
 
-1.	Open the **SCP tool**, and set these four bands into a new Band set, and set the wavelength quick settings as "Sentinel-2", as shown below:
+1.  Open the **SCP tool**, and set these four bands into a new Band set, and set the wavelength quick settings as "Sentinel-2", as shown below:
 
 ![](images/Methodology/Picture166.png){fig-align="center"}
 
 In this case, set the following four bands into Band set 1.
 
-2.	Next, close the dialog window, and navigate to the **SCP & Dock** panel:
+2.  Next, close the dialog window, and navigate to the **SCP & Dock** panel:
 
 ![](images/Methodology/Picture167.png){fig-align="center"}
 
-3.	Click on **Training Input** along the side of the panel, and click on the **icon with a yellow circle** to create a new training input:
+3.  Click on **Training Input** along the side of the panel, and click on the **icon with a yellow circle** to create a new training input:
 
 ![](images/Methodology/Picture168.png){fig-align="center"}
 
-4.	A dialog window pops up. Save the file as `train_before.scp` under the folder `before_flood_sentinel`, as shown:
+4.  A dialog window pops up. Save the file as `train_before.scp` under the folder `before_flood_sentinel`, as shown:
 
 ![](images/Methodology/Picture169.png){fig-align="center"}
 
@@ -1279,27 +1276,27 @@ In this case, set the following four bands into Band set 1.
 
 Next, following our land cover scheme earlier, we will create a region of interest (ROI) representing the land cover of a waterbody.
 
-5.	Fill in the **MC Name** and **C Name**, as shown below:
+5.  Fill in the **MC Name** and **C Name**, as shown below:
 
 ![](images/Methodology/Picture171.png){fig-align="center"}
 
-6.	Next, click on the following tool called Create a ROI polygon inside the SCP toolbar:
+6.  Next, click on the following tool called Create a ROI polygon inside the SCP toolbar:
 
 ![](images/Methodology/Picture172.png){fig-align="center"}
 
-7.	We will create a polygon in the waterbody, as shown below:
+7.  We will create a polygon in the waterbody, as shown below:
 
 ![](images/Methodology/Picture173.png){fig-align="center"}
 
-8.	Once done, click on the following icon to save the ROI's signature. This process will take a few seconds to execute.
+8.  Once done, click on the following icon to save the ROI's signature. This process will take a few seconds to execute.
 
 ![](images/Methodology/Picture174.png){fig-align="center"}
 
-9.	Next, a saved signature appears in our signature list.
+9.  Next, a saved signature appears in our signature list.
 
 ![](images/Methodology/Picture175.png){fig-align="center"}
 
-10.	Repeat the previous steps for a total of **5 samples for each land cover class for a total of 5 different land cover classes**, as shown in our land cover scheme. You should set the **MC ID to each match the land cover class**.
+10. Repeat the previous steps for a total of **5 samples for each land cover class for a total of 5 different land cover classes**, as shown in our land cover scheme. You should set the **MC ID to each match the land cover class**.
 
 Waterbody will use 1 as the MCID, Bareland 2, Vegetation 3, and so on, as shown below:
 
@@ -1315,25 +1312,25 @@ Once complete, there will a total of 25 ROI, representing 5 different land cover
 
 Next, we will be classifying our satellite image using the calculated signatures of the ROIs that we have created.
 
-1.	From SCP \> Band processing \> select Classification
+1.  From SCP \> Band processing \> select Classification
 
 ![](images/Methodology/Picture178.png){fig-align="center"}
 
-2.	Fill in the details as follows:
+2.  Fill in the details as follows:
 
 ![](images/Methodology/Picture179.png){fig-align="center"}
 
-3.	Once done, click on Run and save the output file as `ML_before_flood` under the folder `before_flood_sentinel`. The process will take a few seconds to run.
+3.  Once done, click on Run and save the output file as `ML_before_flood` under the folder `before_flood_sentinel`. The process will take a few seconds to run.
 
 ![](images/Methodology/Picture180.png){fig-align="center"}
 
-4.	Once the process is complete, close the SCP window.
+4.  Once the process is complete, close the SCP window.
 
 You will get the following result:
 
 ![](images/Methodology/Picture181.png){fig-align="center"}
 
-5.	Adjust the properties of this new layer using the methods used earlier, such that the result looks like the following:
+5.  Adjust the properties of this new layer using the methods used earlier, such that the result looks like the following:
 
 ![](images/Methodology/Picture182.png){fig-align="center"}
 
@@ -1354,19 +1351,19 @@ You will get the following result:
 
 Once we have completed our classification, we will now assess the accuracy to determine whether the classification is reliable and can be used to detect land cover change.
 
-1.	From SCP \> Postprocessing \> select **Accuracy**, as shown:
+1.  From SCP \> Postprocessing \> select **Accuracy**, as shown:
 
 ![](images/Methodology/Picture148.png){fig-align="center"}
 
-2.	Fill in the details as follows:
+2.  Fill in the details as follows:
 
 ![](images/Methodology/Picture184.png){fig-align="center"}
 
-3.	Once done, click on Run, and save your output file as `ML_accuracy_before_flood` under the folder `before_flood_sentinel` as shown below:
+3.  Once done, click on Run, and save your output file as `ML_accuracy_before_flood` under the folder `before_flood_sentinel` as shown below:
 
 ![](images/Methodology/Picture185.png){fig-align="center"}
 
-4.	Upon completion, the program will execute.
+4.  Upon completion, the program will execute.
 
 You will receive the following result:
 
@@ -1397,17 +1394,17 @@ Ensure you have the following layers in your project:
 
 Once the two classifications are ready, we will use the SCP tool to determine the changes before and after the flood.
 
-1.	Select the **Land cover change** tool of the SCP plugin (as shown in previous sections) and fill in the details as shown:
+1.  Select the **Land cover change** tool of the SCP plugin (as shown in previous sections) and fill in the details as shown:
 
 ![](images/Methodology/Picture187.png){fig-align="center"}
 
-2.	Click on Run and save the output as `ML_LULC_sentinel` under the folder `SCP`. The output is shown as follows, with a new layer added to our project:
+2.  Click on Run and save the output as `ML_LULC_sentinel` under the folder `SCP`. The output is shown as follows, with a new layer added to our project:
 
 ![](images/Methodology/Picture188.png){fig-align="center"}
 
 ![](images/Methodology/Picture189.png){fig-align="center"}
 
-3.	 Same as what we did before during the classification of GeoEye-1 images, adjust the properties of the new layer such that it appears as follows:
+3.  Same as what we did before during the classification of GeoEye-1 images, adjust the properties of the new layer such that it appears as follows:
 
 ![](images/Methodology/Picture190.png){fig-align="center"}
 
@@ -1421,9 +1418,9 @@ Once the two classifications are ready, we will use the SCP tool to determine th
 
 Repeat the steps in **Section 5.3** for the classification of the Landsat 8/9 satellite images before and after the flood.
 
-1.	Create 2 new sub-folders called `before_flood_landsat` and `after_flood_landsat` under the folder `SCP`.
+1.  Create 2 new sub-folders called `before_flood_landsat` and `after_flood_landsat` under the folder `SCP`.
 
-2.	Ensure that you have the following layers in your project:
+2.  Ensure that you have the following layers in your project:
 
 -   LC08_L1TP_182037_2023-08-25_T1_B1
 
@@ -1437,15 +1434,15 @@ Repeat the steps in **Section 5.3** for the classification of the Landsat 8/9 sa
 
 -   LC08_L1TP_182037_2023-08-25_T1_B6
 
-3.	Next, add the layers into a new band set, such as Band set 3.
+3.  Next, add the layers into a new band set, such as Band set 3.
 
-4.	Create the ROIs for Train and Test, naming the files as `train_before.scp` and `test_before.scp` respectively, saving them into the folder `before_flood_landsat`.
+4.  Create the ROIs for Train and Test, naming the files as `train_before.scp` and `test_before.scp` respectively, saving them into the folder `before_flood_landsat`.
 
-5.	Perform random forest classification, saving your file as `RF_before_flood` under the folder `before_flood_landsat`.
+5.  Perform random forest classification, saving your file as `RF_before_flood` under the folder `before_flood_landsat`.
 
 **Note:** As Random Forest provided a more accurate result for this scenario, it is preferred over the other methods.
 
-6.	Assess the accuracy of the classification.
+6.  Assess the accuracy of the classification.
 
 Once the classification for the Landsat 8 images before the flood is complete, repeat the steps for the classification for the Landsat 9 images after the flood, using the following layers:
 
