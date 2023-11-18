@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>AY2023/24S1 Team 10 - Title3</title>
+<title>AY2023/24S1 Team 10 - Methodology</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,11 +116,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./Before_Flood_3D/GeoEye-GNDVI-Before/index.html" rel="" target="">
- <span class="dropdown-text">Before Flood GNDVI</span></a>
+ <span class="dropdown-text">Before Flood Green Normalized Difference Vegetation Index (GNDVI)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Before_Flood_3D/GeoEye-RDVI-Before/index.html" rel="" target="">
- <span class="dropdown-text">Before Flood RDVI</span></a>
+ <span class="dropdown-text">Before Flood Renormalized Difference Vegetation Index (RDVI)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./After_Flood_3D/GeoEye-TCC-After/index.html" rel="" target="">
@@ -132,11 +132,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./After_Flood_3D/GeoEye-GNDVI-After/index.html" rel="" target="">
- <span class="dropdown-text">After Flood GNDVI</span></a>
+ <span class="dropdown-text">After Flood Green Normalized Difference Vegetation Index (GNDVI)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./After_Flood_3D/GeoEye-RDVI-After/index.html" rel="" target="">
- <span class="dropdown-text">After Flood RDVI</span></a>
+ <span class="dropdown-text">After Flood Renormalized Difference Vegetation Index (RDVI)</span></a>
   </li>  
     </ul>
   </li>
@@ -152,14 +152,82 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology">3. Methodology</a>
+  <ul>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">3.1 Data Collection</a>
+  <ul class="collapse">
+  <li><a href="#collecting-geoeye-1-images" id="toc-collecting-geoeye-1-images" class="nav-link" data-scroll-target="#collecting-geoeye-1-images">3.1.1&nbsp;&nbsp;&nbsp; Collecting GeoEye-1 Images</a></li>
+  <li><a href="#collecting-sentinel-2-images" id="toc-collecting-sentinel-2-images" class="nav-link" data-scroll-target="#collecting-sentinel-2-images">3.1.2&nbsp;&nbsp;&nbsp; Collecting Sentinel 2 Images</a></li>
+  <li><a href="#collecting-landsat-8-9-images" id="toc-collecting-landsat-8-9-images" class="nav-link" data-scroll-target="#collecting-landsat-8-9-images">3.1.3&nbsp;&nbsp;&nbsp; Collecting Landsat 8-9 Images</a></li>
+  <li><a href="#collecting-dem-images" id="toc-collecting-dem-images" class="nav-link" data-scroll-target="#collecting-dem-images">3.1.4 Collecting DEM Images</a></li>
+  <li><a href="#collecting-derna-hexagon-shapefile" id="toc-collecting-derna-hexagon-shapefile" class="nav-link" data-scroll-target="#collecting-derna-hexagon-shapefile">3.1.5 Collecting Derna Hexagon Shapefile</a></li>
+  <li><a href="#collecting-the-fao-soil-map-data-set" id="toc-collecting-the-fao-soil-map-data-set" class="nav-link" data-scroll-target="#collecting-the-fao-soil-map-data-set">3.1.6 Collecting the FAO Soil Map Data set</a></li>
+  </ul></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">3.2 Data Wrangling</a>
+  <ul class="collapse">
+  <li><a href="#processing-raster-layers" id="toc-processing-raster-layers" class="nav-link" data-scroll-target="#processing-raster-layers">3.2.1 Processing Raster Layers</a></li>
+  <li><a href="#add-raster-layers" id="toc-add-raster-layers" class="nav-link" data-scroll-target="#add-raster-layers">3.2.1 Add Raster Layers</a></li>
+  <li><a href="#merge-geoeye-1-raster-layers" id="toc-merge-geoeye-1-raster-layers" class="nav-link" data-scroll-target="#merge-geoeye-1-raster-layers">3.2.3 Merge GeoEye-1 Raster Layers</a></li>
+  <li><a href="#clipping-study-area" id="toc-clipping-study-area" class="nav-link" data-scroll-target="#clipping-study-area">3.2.4 Clipping Study Area</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#creating-composite-images" id="toc-creating-composite-images" class="nav-link" data-scroll-target="#creating-composite-images">4. Creating Composite Images</a>
+  <ul>
+  <li><a href="#geoeye-1-composite-images" id="toc-geoeye-1-composite-images" class="nav-link" data-scroll-target="#geoeye-1-composite-images">4.1 GeoEye-1 Composite Images</a>
+  <ul class="collapse">
+  <li><a href="#geoeye-1-natural-color-image" id="toc-geoeye-1-natural-color-image" class="nav-link" data-scroll-target="#geoeye-1-natural-color-image">4.1.1 GeoEye-1 Natural Color Image</a></li>
+  <li><a href="#geoeye-1-false-color-composite-image" id="toc-geoeye-1-false-color-composite-image" class="nav-link" data-scroll-target="#geoeye-1-false-color-composite-image">4.1.2 GeoEye-1 False Color Composite Image</a></li>
+  <li><a href="#geoeye-1-green-normalized-difference-vegetation-index-gndvi" id="toc-geoeye-1-green-normalized-difference-vegetation-index-gndvi" class="nav-link" data-scroll-target="#geoeye-1-green-normalized-difference-vegetation-index-gndvi">4.1.3 GeoEye-1 Green Normalized Difference Vegetation Index (GNDVI)</a></li>
+  <li><a href="#geoeye-1-renormalized-difference-vegetation-index-rdvi" id="toc-geoeye-1-renormalized-difference-vegetation-index-rdvi" class="nav-link" data-scroll-target="#geoeye-1-renormalized-difference-vegetation-index-rdvi">4.1.4 GeoEye-1 Renormalized Difference Vegetation Index (RDVI)</a></li>
+  <li><a href="#geoeye-1-ferric-iron-3" id="toc-geoeye-1-ferric-iron-3" class="nav-link" data-scroll-target="#geoeye-1-ferric-iron-3">4.1.5 GeoEye-1 Ferric Iron, 3+</a></li>
+  </ul></li>
+  <li><a href="#sentinel-2-composite-images" id="toc-sentinel-2-composite-images" class="nav-link" data-scroll-target="#sentinel-2-composite-images">4.2 Sentinel-2 Composite Images</a>
+  <ul class="collapse">
+  <li><a href="#natural-color-4-3-2" id="toc-natural-color-4-3-2" class="nav-link" data-scroll-target="#natural-color-4-3-2">4.2.1 Natural Color (4-3-2)</a></li>
+  <li><a href="#false-color-composite-8-4-3" id="toc-false-color-composite-8-4-3" class="nav-link" data-scroll-target="#false-color-composite-8-4-3">4.2.2 False Color Composite (8-4-3)</a></li>
+  <li><a href="#geology-12-11-2" id="toc-geology-12-11-2" class="nav-link" data-scroll-target="#geology-12-11-2">4.2.3 Geology (12-11-2)</a></li>
+  <li><a href="#normalised-difference-vegetation-index-ndvi" id="toc-normalised-difference-vegetation-index-ndvi" class="nav-link" data-scroll-target="#normalised-difference-vegetation-index-ndvi">4.2.4 Normalised Difference Vegetation Index (NDVI)</a></li>
+  <li><a href="#moisture-index" id="toc-moisture-index" class="nav-link" data-scroll-target="#moisture-index">4.2.5 Moisture Index</a></li>
+  </ul></li>
+  <li><a href="#landsat-8-landsat-9-composite-images" id="toc-landsat-8-landsat-9-composite-images" class="nav-link" data-scroll-target="#landsat-8-landsat-9-composite-images">4.3 Landsat 8 &amp; Landsat 9 Composite Images</a>
+  <ul class="collapse">
+  <li><a href="#natural-color-4-3-2-1" id="toc-natural-color-4-3-2-1" class="nav-link" data-scroll-target="#natural-color-4-3-2-1">4.3.1 Natural Color (4-3-2)</a></li>
+  <li><a href="#false-color-composite-5-4-3" id="toc-false-color-composite-5-4-3" class="nav-link" data-scroll-target="#false-color-composite-5-4-3">4.3.2 False Color Composite (5-4-3)</a></li>
+  <li><a href="#geology-7-6-2" id="toc-geology-7-6-2" class="nav-link" data-scroll-target="#geology-7-6-2">4.3.3 Geology (7-6-2)</a></li>
+  <li><a href="#normalised-difference-vegetation-index-ndvi-1" id="toc-normalised-difference-vegetation-index-ndvi-1" class="nav-link" data-scroll-target="#normalised-difference-vegetation-index-ndvi-1">4.3.4 Normalised Difference Vegetation Index (NDVI)</a></li>
+  <li><a href="#moisture-index-1" id="toc-moisture-index-1" class="nav-link" data-scroll-target="#moisture-index-1">4.3.5 Moisture Index</a></li>
+  </ul></li>
+  <li><a href="#soil-composition-analysis" id="toc-soil-composition-analysis" class="nav-link" data-scroll-target="#soil-composition-analysis">4.4 Soil Composition Analysis</a>
+  <ul class="collapse">
+  <li><a href="#selecting-dernas-soil-layer" id="toc-selecting-dernas-soil-layer" class="nav-link" data-scroll-target="#selecting-dernas-soil-layer">4.4.1 Selecting Derna’s Soil Layer</a></li>
+  <li><a href="#classifying-dernas-soil-layer" id="toc-classifying-dernas-soil-layer" class="nav-link" data-scroll-target="#classifying-dernas-soil-layer">4.4.2 Classifying Derna’s Soil Layer</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#data-exploration-of-composite-images" id="toc-data-exploration-of-composite-images" class="nav-link" data-scroll-target="#data-exploration-of-composite-images">5 Data Exploration of Composite Images</a>
+  <ul>
+  <li><a href="#composite-images" id="toc-composite-images" class="nav-link" data-scroll-target="#composite-images">5.1 Composite Images</a>
+  <ul class="collapse">
+  <li><a href="#natural-color-images" id="toc-natural-color-images" class="nav-link" data-scroll-target="#natural-color-images">5.1.1 Natural Color Images</a></li>
+  <li><a href="#false-color-composite-images" id="toc-false-color-composite-images" class="nav-link" data-scroll-target="#false-color-composite-images">5.1.2 False Color Composite Images</a></li>
+  <li><a href="#geology-images" id="toc-geology-images" class="nav-link" data-scroll-target="#geology-images">5.1.3 Geology Images</a></li>
+  <li><a href="#moisture-index-images" id="toc-moisture-index-images" class="nav-link" data-scroll-target="#moisture-index-images">5.1.4 Moisture Index Images</a></li>
+  <li><a href="#ndvigndvi" id="toc-ndvigndvi" class="nav-link" data-scroll-target="#ndvigndvi">5.1.5 NDVI/GNDVI</a></li>
+  <li><a href="#rdvi" id="toc-rdvi" class="nav-link" data-scroll-target="#rdvi">5.1.6 RDVI</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Title3</h1>
+<h1 class="title">Methodology</h1>
 </div>
 
 
@@ -174,9 +242,1194 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Test from RStudio Again</p>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">3. Methodology</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Project Methodology.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 6:</strong> Project Methodology Flowchart</figcaption>
+</figure>
+</div>
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">3.1 Data Collection</h3>
+<p>We will first need to create the following folders to store our data:</p>
+<p>1.&nbsp;&nbsp;&nbsp;&nbsp; Create a folder called <code>project</code>.</p>
+<p>2.&nbsp;&nbsp;&nbsp;&nbsp; Create a subfolder called <code>GeoTiff</code> in the <code>project</code> folder.</p>
+<p>3.&nbsp;&nbsp;&nbsp;&nbsp; Create a subfolder called <code>data</code> in the <code>project</code> folder.</p>
+<p>4.&nbsp;&nbsp;&nbsp;&nbsp; Create a subfolder called <code>Geopackage</code> in the <code>project</code> folder.</p>
+<section id="collecting-geoeye-1-images" class="level4">
+<h4 class="anchored" data-anchor-id="collecting-geoeye-1-images">3.1.1&nbsp;&nbsp;&nbsp; Collecting GeoEye-1 Images</h4>
+<p>We will now download the GeoEye-1 satellite images from MAXAR.</p>
+<p>1.&nbsp;&nbsp;&nbsp;&nbsp; Create a new subfolder called <code>GeoEye-1</code> under the GeoTiff folder.</p>
+<p>2.&nbsp;&nbsp;&nbsp;&nbsp; Go to <a href="https://maxar.com/open-data/libya-floods-0923" class="uri">https://maxar.com/open-data/libya-floods-0923</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>3.&nbsp;&nbsp;&nbsp;&nbsp; Search for the Quad Keys and download the following 6 data sets, once for pre-event and once for post-event:</p>
+<ul>
+<li><p>120200213132</p></li>
+<li><p>120200213123</p></li>
+<li><p>120200213131</p></li>
+<li><p>120200213121</p></li>
+<li><p>120200213133</p></li>
+<li><p>120200213130</p></li>
+</ul>
+<p>Your screen should look similar to the following:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>4.&nbsp;&nbsp;&nbsp;&nbsp; Create the following subfolders in the <code>GeoEye-1</code> folder, and save your downloaded data into them respectively (pre-event and post-event):</p>
+<ul>
+<li><p><code>01-07-2023</code></p></li>
+<li><p><code>13-09-2023</code></p></li>
+</ul>
+</section>
+<section id="collecting-sentinel-2-images" class="level4">
+<h4 class="anchored" data-anchor-id="collecting-sentinel-2-images">3.1.2&nbsp;&nbsp;&nbsp; Collecting Sentinel 2 Images</h4>
+<p>We will now download the Sentinel 2 satellite images from the Copernicus Open Access Hub.</p>
+<p>1.&nbsp;&nbsp;&nbsp;&nbsp; Create a new subfolder called <code>Sentinel</code> under the <code>GeoTiff</code> folder.</p>
+<p>2.&nbsp;&nbsp;&nbsp;&nbsp; Go to <a href="https://dataspace.copernicus.eu/browser/" class="uri">https://dataspace.copernicus.eu/browser/</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>3.&nbsp;&nbsp;&nbsp;&nbsp; Login to your account and navigate the map to Derna.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>4.&nbsp;&nbsp;&nbsp;&nbsp; Click on Search, select Sentinel-2 as the data source, and set the cloud cover percentage to 30%.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>5.&nbsp;&nbsp;&nbsp;&nbsp; Scroll down and set the time range as follows. Once done, click on Search.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture6.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>6.&nbsp;&nbsp;&nbsp;&nbsp; The search result appears, scroll through the list:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture7.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>7.&nbsp;&nbsp;&nbsp;&nbsp; Download the following datasets by clicking on the download icon:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture8.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Satellite Images taken on 22/09/2023, after the flood.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture9.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Satellite Images taken on 07/09/2023, before the flood.</figcaption>
+</figure>
+</div>
+<p>8.&nbsp;&nbsp;&nbsp;&nbsp; The downloading process can take up to 30 minutes. Once complete, create the following subfolders in the Sentinel folder, and transfer the downloaded data into the respective folder:</p>
+<ul>
+<li><p><code>Sentinel-2A, 22/09/2023</code></p></li>
+<li><p><code>Sentinel-2B, 7/09/2023</code></p></li>
+</ul>
+</section>
+<section id="collecting-landsat-8-9-images" class="level4">
+<h4 class="anchored" data-anchor-id="collecting-landsat-8-9-images">3.1.3&nbsp;&nbsp;&nbsp; Collecting Landsat 8-9 Images</h4>
+<p>We will now download Landsat 8 and 9 satellite images from the Earth Explorer.</p>
+<ol type="1">
+<li><p>Create a new subfolder called <code>Landsat 8/9</code> under the <code>GeoTiff</code> folder.</p></li>
+<li><p>Go to <a href="https://earthexplorer.usgs.gov/" class="uri">https://earthexplorer.usgs.gov/</a>.</p></li>
+<li><p>Login to your account and navigate to Derna on the map.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture10.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Scroll down the tab and set the Date Range from <strong>08/25/2023 to 09/19/2023</strong>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture11.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Scroll down the tab and set the <strong>cloud cover range to 30%</strong>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture12.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>For coordinates, click on Use Map.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture13.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Click on the Data Sets tab.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture14.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="8" type="1">
+<li>Select the <strong>Landsat 8-9 OLI/TIRS C2 L1</strong> data set:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture15.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>Click on the Results panel.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture16.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="10" type="1">
+<li>Download the following data sets:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture17.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture18.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="11" type="1">
+<li>Under the download options, select Download All Files.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture19.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="12" type="1">
+<li>Create the following subfolders in the <code>Landsat 8/9</code> folder, and save your downloaded data into them respectively:</li>
+</ol>
+<ul>
+<li><p><code>Landsat 8 (25-08-2023)</code></p></li>
+<li><p><code>Landsat 9 (18-09-2023)</code></p></li>
+</ul>
+</section>
+<section id="collecting-dem-images" class="level4">
+<h4 class="anchored" data-anchor-id="collecting-dem-images">3.1.4 Collecting DEM Images</h4>
+<p>We will now download Digital Elevation Model from the Earth Explorer.</p>
+<ol type="1">
+<li><p>Create a new subfolder called <code>DEM</code> under the <code>GeoTiff</code> folder.</p></li>
+<li><p>Go to <a href="https://earthexplorer.usgs.gov/" class="uri">https://earthexplorer.usgs.gov/</a>.</p></li>
+<li><p>Repeat the same steps as above, however, do not set the date range. Instead, select <strong>SRTM 1 ARC- Second Global</strong> as the dataset:</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture20.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click on the Results panel and only one result is returned.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture21.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Download the data set <strong>SRTM1N32E022V3</strong> and move the contents into the <code>DEM</code> subfolder.</li>
+</ol>
+</section>
+<section id="collecting-derna-hexagon-shapefile" class="level4">
+<h4 class="anchored" data-anchor-id="collecting-derna-hexagon-shapefile">3.1.5 Collecting Derna Hexagon Shapefile</h4>
+<p><strong>Derna_city_250m_hexagon</strong> comprises a collection of 250m hexagons defining the study area. It is in a ESRI shapefile format and is available in the GIS project folder of eLearn (SMU’s learning portal.)</p>
+<p>Download the Derna Hexagon Shapefile <strong>provided in E-learn</strong> and save it into the folder called <code>data</code>.</p>
+</section>
+<section id="collecting-the-fao-soil-map-data-set" class="level4">
+<h4 class="anchored" data-anchor-id="collecting-the-fao-soil-map-data-set">3.1.6 Collecting the FAO Soil Map Data set</h4>
+<p>We will now download FAO/ UNESCO Soil Map of the World from FAO.</p>
+<ol type="1">
+<li><p>Create a subfolder named <code>Soil</code> under the folder <code>data</code>.</p></li>
+<li><p>Go to <a href="https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/home" class="uri">https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/home</a>.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture22.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Under Search type “Digital Soil Map of the World”</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture23.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li><p>Download the ESRI shapefile.</p></li>
+<li><p>A new folder called <code>DSMW</code> will be added to the Downloads folder. Copy the contents over to the <code>Soil</code> folder.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture24.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="data-wrangling" class="level3">
+<h3 class="anchored" data-anchor-id="data-wrangling">3.2 Data Wrangling</h3>
+<section id="processing-raster-layers" class="level4">
+<h4 class="anchored" data-anchor-id="processing-raster-layers">3.2.1 Processing Raster Layers</h4>
+<p>Before we can proceed with the SCP Classification, we must first process the raster layers obtained from the satellite imagery sources. This is a necessary step as variation exists in terms of the area covered by the raster layers. For example, the Landsat 8, Landsat 9, and Sentinel-2 raster layers encompass a large area which extends beyond the boundaries of Derna, our focal area. Conversely, the Maxar raster layers require merging to cover the entirety of Derna. Therefore, processing the raster layers is a crucial preliminary step as it sets the foundation for a reliable and targeted dataset essential for effective SCP classification of Derna.</p>
+</section>
+<section id="add-raster-layers" class="level4">
+<h4 class="anchored" data-anchor-id="add-raster-layers">3.2.1 Add Raster Layers</h4>
+<ol type="1">
+<li>From Layer &gt; Add Layer &gt; Add Raster Layer</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture25.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><p>Click on the <img src="images/Methodology/Picture26.png" width="27" height="31"> icon.</p></li>
+<li><p>Navigate to the <code>Sentinel-2B, 7/09/2023</code> folder in your computer’s repository.</p></li>
+<li><p>From <code>Sentinel-2B, 7/09/2023 &gt; GRANULE &gt; L2A_T34SFB_A033967_20230907T091849 &gt; IMG_DATA &gt; 10m</code> &gt; Select <code>B02-B08_10m.jp2 layers</code> and click on open.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture27.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Click on the <img src="images/Methodology/Picture28.png" class="img-fluid" width="156"> button to add the raster layers</li>
+</ol>
+<p>The layers will be added into the Layers panel</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture29.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>3.2.2 Clip Raster Layers</p>
+<ol type="1">
+<li>From Raster &gt; Extraction &gt; Clip Raster by Mask Layer</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture30.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><p>For Input Layer put <code>T34SFB_20230907T090559_B02_10m</code> layer</p></li>
+<li><p>For Clipping extent select Calculate from Layer and put the <code>Derna_city_250m_hexagon</code> layer</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture31.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li><p>Click Run</p></li>
+<li><p>A new virtual layer called <code>Clipped (extent)</code> will be added into the layers panel. Export it as a Geotiff under the name: <code>T34SFB_07-09-2023_T090559_B02_10m</code>. Create a new subfolder named <code>07-09-2023 Clipped</code> in <code>GeoTiff &gt; Sentinel</code>. Create 3 other subfolders in <code>07-09-2023 Clipped</code> called <code>10m</code>, <code>20m</code>, <code>60m</code>, and save the corresponding band number to the respective folder.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture32.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Repeat the process for the following Sentinel-2B raster layers:</li>
+</ol>
+<ul>
+<li><p>T34SFB_20230907T090559_B03_10m</p></li>
+<li><p>T34SFB_20230907T090559_B04_10m</p></li>
+<li><p>T34SFB_20230907T090559_B08_10m</p></li>
+<li><p>T34SFB_20230907T090559_B01_20m</p></li>
+<li><p>T34SFB_20230907T090559_B05_20m</p></li>
+<li><p>T34SFB_20230907T090559_B06_20m</p></li>
+<li><p>T34SFB_20230907T090559_B07_20m</p></li>
+<li><p>T34SFB_20230907T090559_B08A_20m</p></li>
+<li><p>T34SFB_20230907T090559_B11_20m</p></li>
+<li><p>T34SFB_20230907T090559_B12_20m</p></li>
+<li><p>T34SFB_20230907T090559_B09_60m</p></li>
+</ul>
+<ol start="7" type="1">
+<li><p>Create a new subfolder under the <code>GeoTiff &gt; Sentinel</code> called <code>22-09-2023 Clipped</code>. Create 3 other subfolders in <code>22-09-2023 Clipped</code> called <code>10m</code>, <code>20m</code>, <code>60m</code>, and save the corresponding band number to the respective folder.</p></li>
+<li><p>Create two new subfolders under the <code>GeoTiff &gt; Landsat 8/9</code> called <code>Landsat 9 (18-09-2023) Clipped</code> and <code>Landsat 8 (25-08-2023)</code>, respectively.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture33.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>Repeat the steps in <strong>Sections 3.2.1 &amp; 3.2.2</strong> for the <code>Sentinel 2A, 22/09/2023</code>, <code>Landsat 9 (18-09-2023)</code>, <code>Landsat 8 (25-08-2023)</code> datasets, saving them into their respective “Clipped” folders.</li>
+</ol>
+</section>
+<section id="merge-geoeye-1-raster-layers" class="level4">
+<h4 class="anchored" data-anchor-id="merge-geoeye-1-raster-layers">3.2.3 Merge GeoEye-1 Raster Layers</h4>
+<ol type="1">
+<li><p>Create two new subfolders under the <code>GeoTiff &gt; Geoeyes-1</code> called <code>01-07-2023 Clipped</code> and <code>13-09-2023 Clipped</code>, respectively.</p></li>
+<li><p>Add in all <code>01-07-2023</code> raster layers by repeating the steps in <strong>Section 3.2.1</strong></p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture34.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>From Raster &gt; Miscellaneous &gt; Merge</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture35.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>For input layer select all the 01-07-2023 raster layers</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture36.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li><p>Click on Run.</p></li>
+<li><p>A new virtual layer called <code>Merged</code> will be added into the layers panel. Export it as a GeoTiff named <code>01-07-2023 Merged</code> and save it in the <code>01-07-2023 Clipped</code> folder.</p></li>
+</ol>
+<p>Repeat the steps in <strong>Section 3.2.3</strong> for the <code>13-09-2023</code> raster layers. Save the new merged layer as <code>13-09-2023 Merged</code> in the <code>13-09-2023 Clipped</code> folder.</p>
+</section>
+<section id="clipping-study-area" class="level4">
+<h4 class="anchored" data-anchor-id="clipping-study-area">3.2.4 Clipping Study Area</h4>
+<p>To focus our analysis within the boundary of Derna, we will clip the merged raster of the GeoEye-1 images before moving on.</p>
+<p>Following the steps taken in <strong>Section 3.2.2</strong>, clip the <code>01-07-2023 Merged</code> and <code>13-09-2023 Merged</code> layers and save these new layers as <code>01-07-2023 Clipped</code> &amp; <code>13-09-2023 Clipped</code> into the <code>01-07-2023 Clipped</code> &amp; <code>13-09-2023 Clipped</code> <strong>folders</strong> respectively.</p>
+<p>Your clipped layers should look like the following:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture37.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">01-07-2023 Clipped</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture38.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">13-09-2023 Clipped</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="creating-composite-images" class="level2">
+<h2 class="anchored" data-anchor-id="creating-composite-images">4. Creating Composite Images</h2>
+<section id="geoeye-1-composite-images" class="level3">
+<h3 class="anchored" data-anchor-id="geoeye-1-composite-images">4.1 GeoEye-1 Composite Images</h3>
+<section id="geoeye-1-natural-color-image" class="level4">
+<h4 class="anchored" data-anchor-id="geoeye-1-natural-color-image">4.1.1 GeoEye-1 Natural Color Image</h4>
+<p>Natural Color Composite images illustrate the terrain based on how it looks like onboard the satellite platform looking down on the respective target size, which is Derna in this case.</p>
+<ol type="1">
+<li>Right click on the <code>01-07-2023 Merged</code> Raster &gt; <strong>Properties</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture39.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>From information &gt; Symbology</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture40.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Select the following band combination and click OK</li>
+</ol>
+<ul>
+<li><p>For <strong>Red</strong> band select <strong>Band 3</strong></p></li>
+<li><p>For <strong>Green</strong> band select <strong>Band 2</strong></p></li>
+<li><p>For <strong>Blue</strong> select <strong>Band 1</strong></p></li>
+</ul>
+<p><img src="images/Methodology/Picture41.png" class="img-fluid"></p>
+<p>You will get the following image:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture42.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Export the <code>01-07-2023 Merged</code> layer as a Rendered Image called <code>Natural Color (3-2-1)</code> and save it in the <code>01-07-2023 Clipped</code> folder.</li>
+</ol>
+</section>
+<section id="geoeye-1-false-color-composite-image" class="level4">
+<h4 class="anchored" data-anchor-id="geoeye-1-false-color-composite-image">4.1.2 GeoEye-1 False Color Composite Image</h4>
+<p>False color composite image is commonly used for analyzing vegetation, monitoring soil and crops. Deep red indicates healthy and dense vegetation, while grassy or sparse/shrubby vegetation appears in lighter shades while urban areas are green-blue, and the soil color varies from dark to light brown.</p>
+<p>Repeat the process in <strong>Section 4.1.1</strong> but using the following band combination:</p>
+<ul>
+<li><p>For <strong>Red</strong> band select <strong>Band 4</strong></p></li>
+<li><p>For <strong>Green</strong> band select <strong>Band 3</strong></p></li>
+<li><p>For <strong>Blue</strong> select <strong>Band 2</strong></p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture43.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>You will get the following image:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture44.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol type="1">
+<li>Export the <code>01-07-2023 Merged</code> layer as a Rendered Image called <code>False Color Composite (4-3-2)</code> and save it in the <code>01-07-2023 Clipped</code> folder.</li>
+</ol>
+</section>
+<section id="geoeye-1-green-normalized-difference-vegetation-index-gndvi" class="level4">
+<h4 class="anchored" data-anchor-id="geoeye-1-green-normalized-difference-vegetation-index-gndvi">4.1.3 GeoEye-1 Green Normalized Difference Vegetation Index (GNDVI)</h4>
+<p>The GNDVI is a vegetation index used to estimate photosynthetic activity, and is therefore helpful in understanding vegetation density and assessing changes in plant health (ArcGIS Pro, n.d.).</p>
+<p>GNDVI is calculated as a ratio Near Infra-red (NIR) and Green (G) values as per the following equation:</p>
+<p>GNDVI=((NIR - G))/((NIR +G))</p>
+<p>Where:</p>
+<p><strong>Green – Band 2</strong></p>
+<p><strong>NIR – Band 4</strong></p>
+<p>Click on the Processing Toolbox icon <img src="images/Methodology/Picture45.png" class="img-fluid" width="27"></p>
+<ol type="1">
+<li>Search for “<strong>Raster Calculator</strong>” and open the tool</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture46.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>For Expression input the following:</li>
+</ol>
+<p><code>("01-07-2023 Merged@4"-"01-07-2023 Merged@2)/("01-07-2023 Merged@4"+"01-07-2023 Merged@2")</code></p>
+<ul>
+<li><p>For Reference layers use <code>01-07-2023 Merged</code>.</p></li>
+<li><p>Click Run</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture47.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The following layer should be generated:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture48.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>We will now adjust the symbology</p>
+<ol start="3" type="1">
+<li>Right Click on GNDVI &gt; Properties &gt; Symbology &gt; <strong>Singleband pseduocolor</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture49.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>For Color ramp: Select <strong>Greens</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture50.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>For mode set it to <strong>Equal Interval</strong> and set <strong>Classes</strong> to <strong>4</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture51.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture52.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Export the <code>Output</code> layer as a GeoTiff called <code>GNDVI</code> and save it in the <code>01-07-2023 Clipped</code> folder.</li>
+</ol>
+</section>
+<section id="geoeye-1-renormalized-difference-vegetation-index-rdvi" class="level4">
+<h4 class="anchored" data-anchor-id="geoeye-1-renormalized-difference-vegetation-index-rdvi">4.1.4 GeoEye-1 Renormalized Difference Vegetation Index (RDVI)</h4>
+<p>The RDVI is a vegetation index that assesses vegetation health. As floods can drastically affect soil conditions, this index is appropriate for use in our EDA as it is not affected by changes in soil conditions or the angle from which the vegetation is observed (NV5 Geospatial, n.d.), therefore making it more reliable for observing the effects of the flood on vegetation alone.</p>
+<p>RDVI is calculated as a ratio of Near Infra-red (NIR) and Red (R) values as per the following equation:</p>
+<p>RDVI=((NIR - R))/√((NIR + R))</p>
+<p>Where:</p>
+<p><strong>Red – Band 3</strong></p>
+<p><strong>NIR – Band 4</strong></p>
+<ol type="1">
+<li>Repeat the steps from <strong>Section 4.1.3</strong> however under ‘<strong>Expression</strong>’ input:</li>
+</ol>
+<p><code>("01-07-2023 Merged@4"-"01-07-2023 Merged@3")/(("01-07-2023 Merged@4"+"01-07-2023 Merged@3"))^0.5</code></p>
+<ol start="2" type="1">
+<li>Adjust the Symbology according to the following:</li>
+</ol>
+<ul>
+<li><p>Set Render type to Singleband pseudocolor</p></li>
+<li><p>Color Ramp: Greens</p></li>
+<li><p>Mode: Equal Interval</p></li>
+<li><p>Classes: 4</p></li>
+</ul>
+<p>You will get the following layer:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture53.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Export the <code>Output</code> layer as a GeoTiff called <code>RDVI</code> and save it in the <code>01-07-2023 Clipped</code> folder.</li>
+</ol>
+</section>
+<section id="geoeye-1-ferric-iron-3" class="level4">
+<h4 class="anchored" data-anchor-id="geoeye-1-ferric-iron-3">4.1.5 GeoEye-1 Ferric Iron, 3+</h4>
+<p>The roots of plants absorb Iron (Fe) from the soil as either ferrous (Fe2+) or ferric (Fe3+) ions. Fe is essential for healthy vegetation as it plays an essential role in photosynthesis, respiration, and nitrogen-fixation as nitrogen-fixing bacteria use it for enzymatic reactions (The Fertilizer Institute, n.d.).</p>
+<p>Fe<sup>2+</sup>/Fe<sup>3+</sup> deficiency can cause a variety of problems for vegetation such as stunted growth, wilting and reduced yields (The Fertilizer Institute, n.d.).</p>
+<p>Fe<sup>3+</sup> is calculated as a ratio of Red(R) and Green (G) values as per the following equation:</p>
+<p>Fe<sup>3+</sup>=R/G</p>
+<p>Where:</p>
+<p><strong>Red – Band 3</strong></p>
+<p><strong>Green – Band 2</strong></p>
+<ol type="1">
+<li>Repeat the steps from <strong>Section 4.1.3</strong> however under ‘<strong>Expression</strong>’ input:</li>
+</ol>
+<p><code>("01-07-2023 Merged@3"/"01-07-2023 Merged@2")</code></p>
+<ol start="2" type="1">
+<li>Adjust the Symbology according to the following:</li>
+</ol>
+<ul>
+<li><p>Set Render type to Singleband pseudocolor</p></li>
+<li><p>Color Ramp: Cividis</p></li>
+<li><p>Mode: Equal Interval</p></li>
+<li><p>Classes: 4</p></li>
+</ul>
+<p>You will get the following layer:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture54.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Export the <code>Output</code> layer as a GeoTiff called <code>Ferric Iron, Fe3+</code> and save it in the <code>01-07-2023 Clipped</code> folder.</li>
+</ol>
+<p>Repeat the steps from <strong>Sections 4.1.1 – 4.1.4</strong> for the <code>13-09-2023 Merged</code> raster layer. Save the new merged layers as <code>Natural Color (3-2-1)</code>, <code>False Color Composite (4-3-2)</code>, <code>GNDVI</code> and <code>RDVI</code> in the <code>13-09-2023 Clipped</code> folder.</p>
+<ul>
+<li>For GNDVI use the following expression:</li>
+</ul>
+<p><code>("13-09-2023 Merged@4"-"13-09-2023 Merged@2)/("13-09-2023 Merged@4"+"13-09-2023 Merged@2")</code></p>
+<ul>
+<li>For RDVI use the following expression:</li>
+</ul>
+<p><code>("13-09-2023 Merged@4"-"13-09-2023 Merged@3")/(("13-09-2023 Merged@4"+"13-09-2023 Merged@3"))^0.5</code></p>
+</section>
+</section>
+<section id="sentinel-2-composite-images" class="level3">
+<h3 class="anchored" data-anchor-id="sentinel-2-composite-images">4.2 Sentinel-2 Composite Images</h3>
+<section id="natural-color-4-3-2" class="level4">
+<h4 class="anchored" data-anchor-id="natural-color-4-3-2">4.2.1 Natural Color (4-3-2)</h4>
+<ol type="1">
+<li>From SCP &gt; Band set</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture55.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Select the <code>T34SFB_07-09-2023_T090559_B0_10m</code> layer and add it to the band set using the <img src="images/Methodology/Picture56.png" class="img-fluid" width="31"> icon. Add the other bands in the following order:</li>
+</ol>
+<ul>
+<li><p>T34SFB_07-09-2023_T090559_B02_10m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B03_10m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B04_10m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B05_20m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B06_20m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B07_20m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B08_10m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B08A_20m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B09_60m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B11_20m</p></li>
+<li><p>T34SFB_07-09-2023_T090559_B12_20m</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture57.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture58.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>For Wavelength Quick settings select <strong>Sentinel-2 [bands 1,2,3,4,5,6,7,8,8A,9,11,12]</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture59.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li><p>Click Run and close the SCP tab</p></li>
+<li><p>Under <strong>RGB input: ‘4-3-2’</strong> to get the natural color</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture60.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture61.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Export the <code>Virtual Band Set 1</code> layer as a Rendered Image called <code>Natural Colors (4-3-2)</code> and save it in a new subfolder under <code>GeoTiff &gt; Sentinel</code> named <code>07-09-2023 Sentinel 2 Images</code>.</li>
+</ol>
+</section>
+<section id="false-color-composite-8-4-3" class="level4">
+<h4 class="anchored" data-anchor-id="false-color-composite-8-4-3">4.2.2 False Color Composite (8-4-3)</h4>
+<ul>
+<li>Repeat the steps in <strong>Section 4.2.1</strong> but set <strong>RGB to 8-4-3</strong></li>
+</ul>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture62.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol type="1">
+<li>Export the <code>Virtual Band Set 1</code> layer as a Rendered Image called <code>False Color Infrared (8-4-3)</code> and save it in <code>07-09-2023 Sentinel 2 Images</code>.</li>
+</ol>
+</section>
+<section id="geology-12-11-2" class="level4">
+<h4 class="anchored" data-anchor-id="geology-12-11-2">4.2.3 Geology (12-11-2)</h4>
+<p>The geology band combination enhances the visualisation of geological features such as faults, lithology, and geological formations (GISGeography, 2023). Urban areas appear purple while areas with steep slopes appear dark yellow.</p>
+<ul>
+<li>Repeat the steps in <strong>Section 4.2.1</strong> but set <strong>RGB to 12-11-2</strong></li>
+</ul>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture63.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Export the <code>Virtual Band Set 1</code> layer as a Rendered Image called <code>Geology (12-11-2)</code> and save it in <code>07-09-2023 Sentinel 2 Images</code>.</li>
+</ol>
+</section>
+<section id="normalised-difference-vegetation-index-ndvi" class="level4">
+<h4 class="anchored" data-anchor-id="normalised-difference-vegetation-index-ndvi">4.2.4 Normalised Difference Vegetation Index (NDVI)</h4>
+<p>The NDVI quantifies vegetation by measuring the difference between near-infrared (NIR) which vegetation strongly reflects and Red light (R) which vegetation absorbs. The formula is as follows:</p>
+<p>NDVI = ((NIR - R))/((NIR + R))</p>
+<p>Where:</p>
+<p><strong>NIR – Band 5</strong></p>
+<p><strong>Red – Band 4</strong></p>
+<ol type="1">
+<li>Open Raster Calculator</li>
+<li>Under ‘<strong>Expression</strong>’ input:</li>
+</ol>
+<p><code>("T34SFB_07-09-2023_B05_20m@1" - "T34SFB_07-09-2023_T090559_B04_10m@1")/("T34SFB_07-09-2023_B05_20m@1" + "T34SFB_07-09-2023_T090559_B04_10m@1")</code></p>
+<ol start="3" type="1">
+<li>Set Reference layer to <code>T34SFB_07-09-2023_B05_20m</code></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture64.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click Run</li>
+<li>Adjust the Symbology according to the following:</li>
+</ol>
+<ul>
+<li><p>Set Render type to Singleband pseudocolor</p></li>
+<li><p>Color Ramp: Greens</p></li>
+<li><p>Mode: Equal Interval</p></li>
+<li><p>Classes: 4</p></li>
+</ul>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture65.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Export the <code>Output</code> layer as a Rendered Image called <code>NDVI</code> and save it in <code>07-09-2023 Sentinel 2 Images</code>.</li>
+</ol>
+</section>
+<section id="moisture-index" class="level4">
+<h4 class="anchored" data-anchor-id="moisture-index">4.2.5 Moisture Index</h4>
+<p>The moisture index uses the visible and Near Infrared (VNIR) and Short Wave Infrared (SWIR) to generate an index of moisture content. Wetter vegetation has higher values while lower values indicate that plants are under stress from insufficient moisture (GISGeography, 2023).</p>
+<p>Moisture Index= ((VNIR - SWIR))/((VNIR + SWIR))</p>
+<p>Where:</p>
+<p><strong>VNIR – Band 8A</strong></p>
+<p><strong>SWIR – Band 11</strong></p>
+<ol type="1">
+<li>Open Raster Calculator</li>
+<li>Under ‘<strong>Expression</strong>’ input:</li>
+</ol>
+<p><code>("T34SFB_07-09-2023_B08A_20m@1"-"T34SFB_07-09-2023_B11_20m@1")/("T34SFB_07-09-2023_B08A_20m@1"+"T34SFB_07-09-2023_B11_20m@1")</code></p>
+<ol start="3" type="1">
+<li>Set Reference layer to <code>T34SFB_07-09-2023_B08A_20m</code></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture66.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click Run</li>
+<li>Adjust the Symbology according to the following:</li>
+</ol>
+<ul>
+<li><p>Set Render type to Singleband pseudocolor</p></li>
+<li><p>Color Ramp: Blues</p></li>
+<li><p>Mode: Equal Interval</p></li>
+<li><p>Classes: 4</p></li>
+</ul>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture67.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Export the <code>Output</code> layer as a Rendered Image called <code>Moisture Index</code> and save it in <code>07-09-2023 Sentinel 2 Images</code>.</li>
+</ol>
+<p>Repeat the steps from <strong>Sections 4.2.1 – 4.2.5</strong> for <code>22-09-2023 Clipped</code> raster layers. Save the new layers as <code>Natural Colors (4-3-2)</code>, <code>False Color Composite (8-4-3)</code>, <code>Geology (12-11-2)</code>, <code>NDVI</code>, <code>Moisture Index</code> in a new subfolder called <code>13-09-2023 Sentinel 2 Images</code> under the <code>Sentinel 2</code> folder.</p>
+<ul>
+<li>For <code>NDVI</code> use the following expression:</li>
+</ul>
+<p><code>("13-09-2023 Merged@4"-"13-09-2023 Merged@2)/("13-09-2023 Merged@4"+"13-09-2023 Merged@2")</code></p>
+<ul>
+<li>For <code>Moisture Index</code> use the following expression:</li>
+</ul>
+<p><code>("T34SFB_2023-09-22-T090701_B05@1"-"T34SFB_2023-09-22-T090701_B04@1")/("T34SFB_2023-09-22-T090701_B05@1"+"T34SFB_2023-09-22-T090701_B04@1")</code></p>
+</section>
+</section>
+<section id="landsat-8-landsat-9-composite-images" class="level3">
+<h3 class="anchored" data-anchor-id="landsat-8-landsat-9-composite-images">4.3 Landsat 8 &amp; Landsat 9 Composite Images</h3>
+<section id="natural-color-4-3-2-1" class="level4">
+<h4 class="anchored" data-anchor-id="natural-color-4-3-2-1">4.3.1 Natural Color (4-3-2)</h4>
+<ol type="1">
+<li>From SCP &gt; Band set</li>
+<li>Clear the existing band set using the <img src="images/Methodology/Picture68.png" class="img-fluid" width="24"> icon</li>
+</ol>
+<p>According to the steps in <code>Section 4.2.1</code>, add the <code>Landsat 8 (25-08-2023)</code> raster layers in the following order to the Band Set:</p>
+<ul>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B1</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B2</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B3</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B4</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B5</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B6</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B7</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B8</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B9</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B10</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B11</p></li>
+</ul>
+<p>You should have the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture69.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Set Wavelength quick settings to Landsat 8 OLI [bands 1,2,3,4,5,6,7]</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture70.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click Run and close the SCP tab</li>
+<li>Set RGB to ‘4-3-2’</li>
+</ol>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture71.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Export the <code>Virtual Band Set 1</code> layer as a Rendered Image called <code>Natural Color (4-3-2)</code> and save it in a new subfolder under <code>GeoTiff &gt; Landsat 8/9</code> named <code>Landsat 8 (25-08-2023) - Images</code>.</p>
+</section>
+<section id="false-color-composite-5-4-3" class="level4">
+<h4 class="anchored" data-anchor-id="false-color-composite-5-4-3">4.3.2 False Color Composite (5-4-3)</h4>
+<ul>
+<li>Repeat the steps in <strong>Section 4.3.1</strong> but set <strong>RGB to 5-4-3</strong></li>
+</ul>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture72.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol type="1">
+<li>Export the <code>Virtual Band Set 1</code> layer as a Rendered Image called <code>False Color Infrared (5-4-3)</code> and save it in <code>Landsat 8 (25-08-2023) - Images</code>.</li>
+</ol>
+</section>
+<section id="geology-7-6-2" class="level4">
+<h4 class="anchored" data-anchor-id="geology-7-6-2">4.3.3 Geology (7-6-2)</h4>
+<ul>
+<li>Repeat the steps in <strong>Section 4.3.1</strong> but set <strong>RGB to 7-6-2</strong></li>
+</ul>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture73.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Export the <code>Virtual Band Set 1</code> layer as a Rendered Image called <code>Geology (7-6-2)</code> and save it in <code>Landsat 8 (25-08-2023) - Images</code>.</p>
+</section>
+<section id="normalised-difference-vegetation-index-ndvi-1" class="level4">
+<h4 class="anchored" data-anchor-id="normalised-difference-vegetation-index-ndvi-1">4.3.4 Normalised Difference Vegetation Index (NDVI)</h4>
+<p>The NDVI quantifies vegetation by measuring the difference between short wave infrared (SWIR) near-infrared (NIR). The formula is as follows:</p>
+<p>NDVI = ((SWIR - NIR))/((SWIR + NIR))</p>
+<p>Where:</p>
+<p><strong>SWIR – Band 5</strong></p>
+<p><strong>NIR – Band 4</strong></p>
+<ol type="1">
+<li>Open Raster Calculator</li>
+<li>Under ‘<strong>Expression</strong>’ input:</li>
+</ol>
+<p><code>("LC08_L1TP_182037_2023-08-25_T1_B5@1" - "LC08_L1TP_182037_2023-08-25_T1_B4@1")/("LC08_L1TP_182037_2023-08-25_T1_B5@1" + "LC08_L1TP_182037_2023-08-25_T1_B4@1")</code></p>
+<ol start="3" type="1">
+<li>Set Reference layer to <code>LC08_L1TP_182037_2023-08-25_T1_B5</code></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture75.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click Run</li>
+<li>Adjust the Symbology according to the following:</li>
+</ol>
+<ul>
+<li><p>Set Render type to Singleband pseudocolor</p></li>
+<li><p>Color Ramp: Greens</p></li>
+<li><p>Mode: Equal Interval</p></li>
+<li><p>Classes: 4</p></li>
+</ul>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture76.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Export the <code>Output</code> layer as a Rendered Image called <code>NDVI</code> and save it in <code>Landsat 8 (25-08-2023) - Images</code>.</li>
+</ol>
+</section>
+<section id="moisture-index-1" class="level4">
+<h4 class="anchored" data-anchor-id="moisture-index-1">4.3.5 Moisture Index</h4>
+<p>The moisture index uses the visible and Short Wave Infrared (SWIR) and Thermal to generate an index of moisture content. Wetter vegetation has higher values while lower values indicate that plants are under stress from insufficient moisture (GISGeography, 2023).</p>
+<p>Moisture Index = ((SWIR - Thermal))/((SWIR + Thermal))</p>
+<p>Where:</p>
+<p><strong>SWIR – Band 5</strong></p>
+<p><strong>Thermal – Band 6</strong></p>
+<ol type="1">
+<li>Open Raster Calculator</li>
+<li>Under ‘<strong>Expression</strong>’ input:</li>
+</ol>
+<p><code>("T34SFB_2023-09-22-T090701_B05@1"-"T34SFB_2023-09-22-T090701_B06@1")/("T34SFB_2023-09-22-T090701_B05@1"+"T34SFB_2023-09-22-T090701_B06@1")Set Reference layer to LC08_L1TP_182037_2023-08-25_T1_B5</code></p>
+<ol start="3" type="1">
+<li>Set Reference layer to <code>T34SFB_2023-09-22-T090701_B05</code></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture77.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Click Run</li>
+<li>Adjust the Symbology according to the following:</li>
+</ol>
+<ul>
+<li><p>Set Render type to Singleband pseudocolor</p></li>
+<li><p>Color Ramp: Blues</p></li>
+<li><p>Mode: Equal Interval</p></li>
+<li><p>Classes: 4</p></li>
+</ul>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture78.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Export the <code>Output</code> layer as a Rendered Image called <code>Moisture Index</code> and save it in <code>Landsat 8 (25-08-2023) - Images</code>.</li>
+</ol>
+<p>Repeat the steps from <strong>Sections 4.3.1 – 4.3.5</strong> for <code>Landsat 9 (18-09-2023) Clipped</code> raster layers. Save the new layers as <code>Natural Colors (4-3-2)</code>, <code>False Color Composite (8-4-3)</code>, <code>Geology (12-11-2)</code>, <code>NDVI</code>, <code>Moisture Index</code> in a new subfolder <code>Landsat 9 (18-09-2023) Composite Images</code> under the <code>Landsat 8/9 folder</code>.</p>
+<ul>
+<li>For <code>NDVI</code> use the following expression:</li>
+</ul>
+<p><code>("LC09_L1TP_182037_2023-09-18_T1_B5@1"-"LC09_L1TP_182037_2023-09-18_T1_B4@1")/("LC09_L1TP_182037_2023-09-18_T1_B5@1"+"LC09_L1TP_182037_2023-09-18_T1_B4@1")</code></p>
+<ul>
+<li>For <code>Moisture Index</code> use the following expression:</li>
+</ul>
+<p><code>("LC09_L1TP_182037_2023-09-18_T1_B5@1" - "LC09_L1TP_182037_2023-09-18_T1_B6@1")/("LC09_L1TP_182037_2023-09-18_T1_B5@1" + "LC09_L1TP_182037_2023-09-18_T1_B6@1")</code></p>
+</section>
+</section>
+<section id="soil-composition-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="soil-composition-analysis">4.4 Soil Composition Analysis</h3>
+<section id="selecting-dernas-soil-layer" class="level4">
+<h4 class="anchored" data-anchor-id="selecting-dernas-soil-layer">4.4.1 Selecting Derna’s Soil Layer</h4>
+<ol type="1">
+<li>From Layer &gt; Add Layer &gt; Add Vector Layer</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture79.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><p>Click on the <img src="images/Methodology/Picture80.png" class="img-fluid" width="22"> icon.</p></li>
+<li><p>Navigate to the <code>Soil</code> folder in your computer’s repository.</p></li>
+<li><p>From Soil &gt; DSMW &gt; Select <code>DSMW.shp</code> layer and click on open.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture81.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>The DSMW vector layer will be added to the layers panel.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture82.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Right click on the DSMW layer &gt; <strong>Open Attribute Table</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture83.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="7" type="1">
+<li><p>Click on the <strong>Select by Expression</strong> icon <img src="images/Methodology/Picture84.png" width="28" height="27"></p></li>
+<li><p>Under Expression input the following: <code>COUNTRY = 'LIBYA'</code> and click on “<strong>Select Features</strong>”.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture85.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The following area will be selected:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture86.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>Right click on the DSMW layer &gt; Export &gt; <strong>Save Selected Features As…</strong></li>
+</ol>
+<p>o Save it as a GeoPackage under the name <code>Libya_Soil</code> and set the CRS to <code>EPSG:4326 – WGS 84</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture87.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture88.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="10" type="1">
+<li>Bring the <code>Derna_city_250m hexagon</code> layer to the top of the layers panel</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture89.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>As the <code>Libya_Soil</code> extends beyond the administrative boundaries of Derna, we will need to clip the <code>Libya_Soil</code> layer.</p>
+<ol start="11" type="1">
+<li>From Vector &gt; Geoprocessing Tools &gt; <strong>Clip</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture90.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="12" type="1">
+<li>Input the following Parameters:</li>
+</ol>
+<ul>
+<li><p>For Input Layer set <code>Libya_Soil</code> layer</p></li>
+<li><p>For Overlay Layer set <code>Derna_city_250m_hexagon</code> layer</p></li>
+<li><p>Click Run</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture91.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The following layer will be generated:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture92.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="13" type="1">
+<li>Export the <code>Clipped</code> layer as a GeoPackage called <code>Derna_Soil Classification</code> and save it in the <code>Soil</code> subfolder in the <code>GeoTiff</code> folder.</li>
+</ol>
+</section>
+<section id="classifying-dernas-soil-layer" class="level4">
+<h4 class="anchored" data-anchor-id="classifying-dernas-soil-layer">4.4.2 Classifying Derna’s Soil Layer</h4>
+<ol type="1">
+<li>Open the <strong>Attribute Table</strong> of the <code>Derna_Soil Classification</code> layer.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture93.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Based on the above, the FAOSOIL value is ‘I-Bv-Lc-2/3ab’.</p>
+<ol start="2" type="1">
+<li>Navigate to the <code>DSMW</code> folder in your data repository and open the ‘<code>readme.doc</code>’</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture94.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture95.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture96.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Using information provided in the ‘<code>readme.doc</code>’, we can determine Derna’s soil type:</p>
+<ul>
+<li><p><strong>I:</strong> Lithosol</p></li>
+<li><p><strong>Bv:</strong> Vertic Cambisols</p></li>
+<li><p><strong>Lc:</strong> Chromic Luvisols</p></li>
+<li><p><strong>2/3ab:</strong> dry soil that receives moisture for a short period of time.</p></li>
+</ul>
+<p>The dominant soil type of Derna is Lithosols, while Vertic Cambisols and Chromic Luvisols are also present, but with less abundance.</p>
+</section>
+</section>
+</section>
+<section id="data-exploration-of-composite-images" class="level2">
+<h2 class="anchored" data-anchor-id="data-exploration-of-composite-images">5 Data Exploration of Composite Images</h2>
+<section id="composite-images" class="level3">
+<h3 class="anchored" data-anchor-id="composite-images">5.1 Composite Images</h3>
+<p>Prior to conducting the Land Use Land Cover Change (LULC) classification, it is vital that the composite images are examined to gain a better understanding of the land cover changes caused by the flood. This understanding will enable visual identification of errors without constantly needing to meticulously examine the quantifiable metrics.</p>
+<section id="natural-color-images" class="level4">
+<h4 class="anchored" data-anchor-id="natural-color-images">5.1.1 Natural Color Images</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture97.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 7:</strong> Landsat 8/9, Sentinel-2 &amp; GeoEye-1 Natural Color Images Before and After the Flood</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture98.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 8:</strong> GeoEye-1 Natural Color Images of the Flood Damage</figcaption>
+</figure>
+</div>
+<p>The pre-flood images in Figure 7, demonstrate that Derna is a coastal city bisected by a river, the Wadi Derna River, comprising dense patches of vegetation and a mountainous terrain. However, the post-flood photos in Figure 7 illustrate a scene of utter chaos and destruction as despite the floodwaters notably receding, it is evident that they are carrying a substantial amount of mud and debris, discernible through the color of the water. In addition, tremendous damage has been caused to Derna’s essential infrastructure through the destruction of five major roads, a highway, and a port facility as depicted in Figure 8. In particular, the city center has been inundated with areas in close proximity to the Wadi Derna River appearing to have experienced the brunt of the devastation.</p>
+<p>In addition, the visualisation of the damage is far easier to see in the GeoEye-1 imagery, followed by Sentinel-2 imagery, and lastly the Landsat 8/9 imagery. This can be attributed to GeoEye-1’s close proximity (1.84m) to the target site, resulting in a higher image resolution.</p>
+</section>
+<section id="false-color-composite-images" class="level4">
+<h4 class="anchored" data-anchor-id="false-color-composite-images">5.1.2 False Color Composite Images</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture99.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 9:</strong> Landsat 8/9, Sentinel-2 &amp; GeoEye-1 False Color Composite Images Before and After the Flood</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture100.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 10:</strong> GeoEye-1 False Color Composite Images of the Flood Damage</figcaption>
+</figure>
+</div>
+<p>The pre-flood images in Figures 9 and 10, depicts dense vegetation alongside the Wadi Derna river, with dense patches of farmlands scattered throughout the city of Derna. In addition, sparse variation can be observed throughout the city. However, the post-flood photos in Figures 9 and 10 illustrate a severe reduction of vegetation with a notable decrease in vegetation density alongside the Wadi Derna river with numerous plantations in the city being transformed into barren land after the flood.</p>
+</section>
+<section id="geology-images" class="level4">
+<h4 class="anchored" data-anchor-id="geology-images">5.1.3 Geology Images</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture101.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 11:</strong> Landsat 8/9 &amp; Sentinel-2 Geology Images Before and After the Flood</figcaption>
+</figure>
+</div>
+<p>The pre-flood geological features of Derna in Figure 11 depicts a dense concentration of geological structures located away from the urban area, which is located along the coastline. The mountainous terrain exhibits a variety of geological characteristics, which is illustrated by the varying intensity of the yellow color. The post-flood images exhibit a more well-defined geological structure, indicating that the flood may have exposed underlying formations through erosion enabled by natural processes such as chemical weathering<sup>1</sup>.</p>
+<p><sup>1</sup>Chemical weathering refers to the chemical decomposition of rocks in situ by natural agents at the earth's surface which causes rocks to be weakened and land to be made more permeable, making it more susceptible to erosion.</p>
+</section>
+<section id="moisture-index-images" class="level4">
+<h4 class="anchored" data-anchor-id="moisture-index-images">5.1.4 Moisture Index Images</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture102.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 12:</strong> Landsat 8/9 &amp; Sentinel-2 Geology Images Before and After the Flood</figcaption>
+</figure>
+</div>
+<p>The pre-flood Moisture Index in Figure 12 exhibits a relatively high water uptake in areas of dense vegetation which reveals that these regions were well-hydrated prior to the flood. However, the post-flood imagery illustrates a slightly increased water uptake in these regions, which indicates that the flood further saturated these regions.</p>
+</section>
+<section id="ndvigndvi" class="level4">
+<h4 class="anchored" data-anchor-id="ndvigndvi">5.1.5 NDVI/GNDVI</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture103.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 13:</strong> Landsat 8/9, Sentinel-2 &amp; GeoEye-1 GNDVI Before and After the Flood</figcaption>
+</figure>
+</div>
+<p>The pre-flood GNDVI/NDVI illustrates good vegetation density and health. However, the post-flood GNDVI/NDVI indicates a severe reduction of vegetation, however, vegetation health remains mostly unchanged.</p>
+</section>
+<section id="rdvi" class="level4">
+<h4 class="anchored" data-anchor-id="rdvi">5.1.6 RDVI</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture104.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 14:</strong> GeoEye-1 RDVI Images Before and After the Flood</figcaption>
+</figure>
+</div>
+<p>The pre-flood RDVI in Figure 14 illustrates good vegetation health and dense vegetation is distributed across the city. However, the post-flood RDVI demonstrates a severe reduction in vegetation density and decline in vegetation health as illustrated by the white spots present. This indicates that the flood not only stripped away vegetation but also attributed towards reducing vegetation health.</p>
+<p>Now that we have gained a better understanding of the land cover changes from <strong>Sections 5.1.1 – 5.1.6</strong>, we are now ready to proceed with the Land Cover Classification, as outlined in <strong>Section 5.2</strong>.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

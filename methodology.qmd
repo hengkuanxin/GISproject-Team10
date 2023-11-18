@@ -1,5 +1,950 @@
 ---
-title: "Title3"
+title: "Methodology"
 ---
 
-Test from RStudio Again
+## 3. Methodology
+
+![**Figure 6:** Project Methodology Flowchart](images/Methodology/Project%20Methodology.png)
+
+### 3.1 Data Collection
+
+We will first need to create the following folders to store our data:
+
+1.     Create a folder called `project`.
+
+2.     Create a subfolder called `GeoTiff` in the `project` folder.
+
+3.     Create a subfolder called `data` in the `project` folder.
+
+4.     Create a subfolder called `Geopackage` in the `project` folder.
+
+#### 3.1.1    Collecting GeoEye-1 Images
+
+We will now download the GeoEye-1 satellite images from MAXAR.
+
+1.     Create a new subfolder called `GeoEye-1` under the GeoTiff folder.
+
+2.     Go to <https://maxar.com/open-data/libya-floods-0923>.
+
+![](images/Methodology/Picture1.png){fig-align="center"}
+
+3.     Search for the Quad Keys and download the following 6 data sets, once for pre-event and once for post-event:
+
+-   120200213132
+
+-   120200213123
+
+-   120200213131
+
+-   120200213121
+
+-   120200213133
+
+-   120200213130
+
+Your screen should look similar to the following:
+
+![](images/Methodology/Picture2.png){fig-align="center"}
+
+4.     Create the following subfolders in the `GeoEye-1` folder, and save your downloaded data into them respectively (pre-event and post-event):
+
+-   `01-07-2023`
+
+-   `13-09-2023`
+
+#### 3.1.2    Collecting Sentinel 2 Images
+
+We will now download the Sentinel 2 satellite images from the Copernicus Open Access Hub.
+
+1.     Create a new subfolder called `Sentinel` under the `GeoTiff` folder.
+
+2.     Go to <https://dataspace.copernicus.eu/browser/>.
+
+![](images/Methodology/Picture3.png){fig-align="center"}
+
+3.     Login to your account and navigate the map to Derna.
+
+![](images/Methodology/Picture4.png){fig-align="center"}
+
+4.     Click on Search, select Sentinel-2 as the data source, and set the cloud cover percentage to 30%.
+
+![](images/Methodology/Picture5.png){fig-align="center"}
+
+5.     Scroll down and set the time range as follows. Once done, click on Search.
+
+![](images/Methodology/Picture6.png){fig-align="center"}
+
+6.     The search result appears, scroll through the list:
+
+![](images/Methodology/Picture7.png){fig-align="center"}
+
+7.     Download the following datasets by clicking on the
+download icon:
+
+![Satellite Images taken on 22/09/2023, after the flood.](images/Methodology/Picture8.png){fig-align="center"}
+
+![Satellite Images taken on 07/09/2023, before the flood.](images/Methodology/Picture9.png){fig-align="center"}
+
+8.     The downloading process can take up to 30 minutes. Once complete, create the following subfolders in the Sentinel folder, and transfer the downloaded data into the respective folder:
+
+-   `Sentinel-2A, 22/09/2023`
+
+-   `Sentinel-2B, 7/09/2023`
+
+#### 3.1.3    Collecting Landsat 8-9 Images
+
+We will now download Landsat 8 and 9 satellite images from the Earth Explorer.
+
+ 1. Create a new subfolder called `Landsat 8/9` under the `GeoTiff` folder.
+
+2.  Go to <https://earthexplorer.usgs.gov/>.
+
+3.  Login to your account and navigate to Derna on the map.
+
+![](images/Methodology/Picture10.png){fig-align="center"}
+
+4.	Scroll down the tab and set the Date Range from **08/25/2023 to 09/19/2023**.
+
+![](images/Methodology/Picture11.png){fig-align="center"}
+
+5.	Scroll down the tab and set the **cloud cover range to 30%**.
+
+![](images/Methodology/Picture12.png){fig-align="center"}
+
+6.	For coordinates, click on Use Map.
+
+![](images/Methodology/Picture13.png){fig-align="center"}
+
+7.	Click on the Data Sets tab.
+
+![](images/Methodology/Picture14.png){fig-align="center"}
+
+8.	Select the **Landsat 8-9 OLI/TIRS C2 L1** data set:
+
+![](images/Methodology/Picture15.png){fig-align="center"}
+
+9.	Click on the Results panel.
+
+![](images/Methodology/Picture16.png){fig-align="center"}
+
+10.	Download the following data sets:
+
+![](images/Methodology/Picture17.png){fig-align="center"}
+
+![](images/Methodology/Picture18.png){fig-align="center"}
+
+11.	Under the download options, select Download All Files.
+
+![](images/Methodology/Picture19.png){fig-align="center"}
+
+12.	Create the following subfolders in the `Landsat 8/9` folder, and save your downloaded data into them respectively:
+
+-   `Landsat 8 (25-08-2023)`
+
+-   `Landsat 9 (18-09-2023)`
+
+#### 3.1.4	Collecting DEM Images
+
+We will now download Digital Elevation Model from the Earth Explorer.
+
+1.	Create a new subfolder called `DEM` under the `GeoTiff` folder.
+
+2.	Go to <https://earthexplorer.usgs.gov/>.
+
+3.	Repeat the same steps as above, however, do not set the date range. Instead, select **SRTM 1 ARC- Second Global** as the dataset:
+
+![](images/Methodology/Picture20.png){fig-align="center"}
+
+4.	Click on the Results panel and only one result is returned.
+
+![](images/Methodology/Picture21.png){fig-align="center"}
+
+5.	Download the data set **SRTM1N32E022V3** and move the contents into the `DEM` subfolder.
+
+#### 3.1.5	 Collecting Derna Hexagon Shapefile
+
+**Derna_city_250m_hexagon** comprises a collection of 250m hexagons defining the study area. It is in a ESRI shapefile format and is available in the GIS project folder of eLearn (SMU's learning portal.)
+
+Download the Derna Hexagon Shapefile **provided in E-learn** and save it into the folder called `data`.
+
+#### 3.1.6	Collecting the FAO Soil Map Data set  
+
+We will now download FAO/ UNESCO Soil Map of the World from FAO.
+
+1.	Create a subfolder named `Soil` under the folder `data`.
+
+2.	Go to <https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/home>.
+
+![](images/Methodology/Picture22.png){fig-align="center"}
+
+3.	Under Search type "Digital Soil Map of the World"
+
+![](images/Methodology/Picture23.png){fig-align="center"}
+
+4.	Download the ESRI shapefile.
+
+5.	A new folder called `DSMW` will be added to the Downloads folder. Copy the contents over to the `Soil` folder.
+
+![](images/Methodology/Picture24.png){fig-align="center"}
+
+### 3.2 Data Wrangling 
+
+#### 3.2.1 Processing Raster Layers 
+
+Before we can proceed with the SCP Classification, we must first process the raster layers obtained from the satellite imagery sources. This is a necessary step as variation exists in terms of the area covered by the raster layers. For example, the Landsat 8, Landsat 9, and Sentinel-2 raster layers encompass a large area which extends beyond the boundaries of Derna, our focal area. Conversely, the Maxar raster layers require merging to cover the entirety of Derna. Therefore, processing the raster layers is a crucial preliminary step as it sets the foundation for a reliable and targeted dataset essential for effective SCP classification of Derna.
+
+#### 3.2.1	Add Raster Layers
+
+1.	From Layer \> Add Layer \> Add Raster Layer
+
+![](images/Methodology/Picture25.png){fig-align="center"}
+
+2.	Click on the ![](images/Methodology/Picture26.png){width="27" height="31"} icon.
+
+3.	Navigate to the `Sentinel-2B, 7/09/2023` folder in your computer's repository.
+
+4.	From `Sentinel-2B, 7/09/2023 > GRANULE > L2A_T34SFB_A033967_20230907T091849 > IMG_DATA > 10m` \> Select `B02-B08_10m.jp2 layers` and click on open.
+
+![](images/Methodology/Picture27.png){fig-align="center"}
+
+5.	Click on the ![](images/Methodology/Picture28.png){width="156"} button to add the raster layers
+
+The layers will be added into the Layers panel
+
+![](images/Methodology/Picture29.png){fig-align="center"}
+
+3.2.2	Clip Raster Layers
+
+1.	From Raster \> Extraction \> Clip Raster by Mask Layer
+
+![](images/Methodology/Picture30.png){fig-align="center"}
+
+2.	For Input Layer put `T34SFB_20230907T090559_B02_10m` layer
+
+3.	For Clipping extent select Calculate from Layer and put the `Derna_city_250m_hexagon` layer
+
+![](images/Methodology/Picture31.png){fig-align="center"}
+
+4.	Click Run
+
+5.	A new virtual layer called `Clipped (extent)` will be added into the layers panel. Export it as a Geotiff under the name: `T34SFB_07-09-2023_T090559_B02_10m`. Create a new subfolder named `07-09-2023 Clipped` in `GeoTiff > Sentinel`. Create 3 other subfolders in `07-09-2023 Clipped` called `10m`, `20m`, `60m`, and save the corresponding band number to the respective folder.
+
+![](images/Methodology/Picture32.png){fig-align="center"}
+
+6.	Repeat the process for the following Sentinel-2B raster layers:
+
+-   T34SFB_20230907T090559_B03_10m
+
+-   T34SFB_20230907T090559_B04_10m
+
+-   T34SFB_20230907T090559_B08_10m
+
+-   T34SFB_20230907T090559_B01_20m
+
+-   T34SFB_20230907T090559_B05_20m
+
+-   T34SFB_20230907T090559_B06_20m
+
+-   T34SFB_20230907T090559_B07_20m
+
+-   T34SFB_20230907T090559_B08A_20m
+
+-   T34SFB_20230907T090559_B11_20m
+
+-   T34SFB_20230907T090559_B12_20m
+
+-   T34SFB_20230907T090559_B09_60m
+
+7.	Create a new subfolder under the `GeoTiff > Sentinel` called `22-09-2023 Clipped`. Create 3 other subfolders in `22-09-2023 Clipped` called `10m`, `20m`, `60m`, and save the corresponding band number to the respective folder.
+
+8.	Create two new subfolders under the `GeoTiff > Landsat 8/9` called `Landsat 9 (18-09-2023) Clipped` and `Landsat 8 (25-08-2023)`, respectively.
+
+![](images/Methodology/Picture33.png){fig-align="center"}
+
+9.	Repeat the steps in **Sections 3.2.1 & 3.2.2** for the `Sentinel 2A, 22/09/2023`, `Landsat 9 (18-09-2023)`, `Landsat 8 (25-08-2023)` datasets, saving them into their respective "Clipped" folders.
+
+#### 3.2.3	Merge GeoEye-1 Raster Layers
+
+1.	Create two new subfolders under the `GeoTiff > Geoeyes-1` called `01-07-2023 Clipped` and `13-09-2023 Clipped`, respectively.
+
+2.	Add in all `01-07-2023` raster layers by repeating the steps in **Section 3.2.1**
+
+![](images/Methodology/Picture34.png){fig-align="center"}
+
+3.	From Raster \> Miscellaneous \> Merge
+
+![](images/Methodology/Picture35.png){fig-align="center"}
+
+4.	For input layer select all the 01-07-2023 raster layers
+
+![](images/Methodology/Picture36.png){fig-align="center"}
+
+5.	Click on Run.
+
+6.	A new virtual layer called `Merged` will be added into the layers panel. Export it as a GeoTiff named `01-07-2023 Merged` and save it in the `01-07-2023 Clipped` folder.
+
+Repeat the steps in **Section 3.2.3** for the `13-09-2023` raster layers. Save the new merged layer as `13-09-2023 Merged` in the `13-09-2023 Clipped` folder.
+
+#### 3.2.4	 Clipping Study Area
+
+To focus our analysis within the boundary of Derna, we will clip the merged raster of the GeoEye-1 images before moving on.
+
+Following the steps taken in **Section 3.2.2**, clip the `01-07-2023 Merged` and `13-09-2023 Merged` layers and save these new layers as `01-07-2023 Clipped` & `13-09-2023 Clipped` into the `01-07-2023 Clipped` & `13-09-2023 Clipped` **folders** respectively.
+
+Your clipped layers should look like the following:
+
+![01-07-2023 Clipped](images/Methodology/Picture37.png){fig-align="center"}
+
+![13-09-2023 Clipped](images/Methodology/Picture38.png){fig-align="center"}
+
+## 4.	Creating Composite Images 
+
+### 4.1	GeoEye-1 Composite Images
+
+#### 4.1.1 	GeoEye-1 Natural Color Image
+
+Natural Color Composite images illustrate the terrain based on how it looks like onboard the satellite platform looking down on the respective target size, which is Derna in this case.
+
+1.	Right click on the `01-07-2023 Merged` Raster \> **Properties**
+
+![](images/Methodology/Picture39.png){fig-align="center"}
+
+2.	From information \> Symbology
+
+![](images/Methodology/Picture40.png){fig-align="center"}
+
+3.	Select the following band combination and click OK
+
+-   For **Red** band select **Band 3**
+
+-   For **Green** band select **Band 2**
+
+-   For **Blue** select **Band 1**
+
+![](images/Methodology/Picture41.png)
+
+You will get the following image:
+
+![](images/Methodology/Picture42.png){fig-align="center"}
+
+4.  Export the `01-07-2023 Merged` layer as a Rendered Image called `Natural Color (3-2-1)` and save it in the `01-07-2023 Clipped` folder.
+
+#### 4.1.2 GeoEye-1 False Color Composite Image
+
+False color composite image is commonly used for analyzing vegetation, monitoring soil and crops. Deep red indicates healthy and dense vegetation, while grassy or sparse/shrubby vegetation appears in lighter shades while urban areas are green-blue, and the soil color varies from dark to light brown.
+
+Repeat the process in **Section 4.1.1** but using the following band combination:
+
+-   For **Red** band select **Band 4**
+
+-   For **Green** band select **Band 3**
+
+-   For **Blue** select **Band 2**
+
+![](images/Methodology/Picture43.png){fig-align="center"}
+
+You will get the following image:
+
+![](images/Methodology/Picture44.png){fig-align="center"}
+
+1.  Export the `01-07-2023 Merged` layer as a Rendered Image called `False Color Composite (4-3-2)` and save it in the `01-07-2023 Clipped` folder.
+
+#### 4.1.3 GeoEye-1 Green Normalized Difference Vegetation Index (GNDVI)
+
+The GNDVI is a vegetation index used to estimate photosynthetic activity, and is therefore helpful in understanding vegetation density and assessing changes in plant health (ArcGIS Pro, n.d.).
+
+GNDVI is calculated as a ratio Near Infra-red (NIR) and Green (G) values as per the following equation:
+
+GNDVI=((NIR - G))/((NIR +G))
+
+Where:
+
+**Green -- Band 2**
+
+**NIR -- Band 4**
+
+Click on the Processing Toolbox icon ![](images/Methodology/Picture45.png){width="27"}
+
+1.	Search for "**Raster Calculator**" and open the tool
+
+![](images/Methodology/Picture46.png){fig-align="center"}
+
+2.	For Expression input the following:
+
+`("01-07-2023 Merged@4"-"01-07-2023 Merged@2)/("01-07-2023 Merged@4"+"01-07-2023 Merged@2")`
+
+-   For Reference layers use `01-07-2023 Merged`.
+
+-   Click Run
+
+![](images/Methodology/Picture47.png){fig-align="center"}
+
+The following layer should be generated:
+
+![](images/Methodology/Picture48.png){fig-align="center"}
+
+We will now adjust the symbology
+
+3.	Right Click on GNDVI \> Properties \> Symbology \> **Singleband pseduocolor**
+
+![](images/Methodology/Picture49.png){fig-align="center"}
+
+4.	For Color ramp: Select **Greens**
+
+![](images/Methodology/Picture50.png){fig-align="center"}
+
+5.	For mode set it to **Equal Interval** and set **Classes** to **4**
+
+![](images/Methodology/Picture51.png){fig-align="center"}
+
+You will get the following result:
+
+![](images/Methodology/Picture52.png){fig-align="center"}
+
+6.	Export the `Output` layer as a GeoTiff called `GNDVI` and save it in the `01-07-2023 Clipped` folder.
+
+#### 4.1.4 GeoEye-1 Renormalized Difference Vegetation Index (RDVI)
+
+The RDVI is a vegetation index that assesses vegetation health. As floods can drastically affect soil conditions, this index is appropriate for use in our EDA as it is not affected by changes in soil conditions or the angle from which the vegetation is observed (NV5 Geospatial, n.d.), therefore making it more reliable for observing the effects of the flood on vegetation alone.
+
+RDVI is calculated as a ratio of Near Infra-red (NIR) and Red (R) values as per the following equation:
+
+RDVI=((NIR - R))/√((NIR + R))
+
+Where:
+
+**Red -- Band 3**
+
+**NIR -- Band 4**
+
+1.  Repeat the steps from **Section 4.1.3** however under '**Expression**' input:
+
+`("01-07-2023 Merged@4"-"01-07-2023 Merged@3")/(("01-07-2023 Merged@4"+"01-07-2023 Merged@3"))^0.5`
+
+2.  Adjust the Symbology according to the following:
+
+-   Set Render type to Singleband pseudocolor
+
+-   Color Ramp: Greens
+
+-   Mode: Equal Interval
+
+-   Classes: 4
+
+You will get the following layer:
+
+![](images/Methodology/Picture53.png){fig-align="center"}
+
+3.  Export the `Output` layer as a GeoTiff called `RDVI` and save it in the `01-07-2023 Clipped` folder.
+
+#### 4.1.5	GeoEye-1 Ferric Iron, 3+ 
+
+The roots of plants absorb Iron (Fe) from the soil as either ferrous (Fe2+) or ferric (Fe3+) ions. Fe is essential for healthy vegetation as it plays an essential role in photosynthesis, respiration, and nitrogen-fixation as nitrogen-fixing bacteria use it for enzymatic reactions (The Fertilizer Institute, n.d.).
+
+Fe^2+^/Fe^3+^ deficiency can cause a variety of problems for vegetation such as stunted growth, wilting and reduced yields (The Fertilizer Institute, n.d.).
+
+Fe^3+^ is calculated as a ratio of Red(R) and Green (G) values as per the following equation:
+
+Fe^3+^=R/G
+
+Where:
+
+**Red -- Band 3**
+
+**Green -- Band 2**
+
+1.  Repeat the steps from **Section 4.1.3** however under '**Expression**' input:
+
+`("01-07-2023 Merged@3"/"01-07-2023 Merged@2")`
+
+2.  Adjust the Symbology according to the following:
+
+-   Set Render type to Singleband pseudocolor
+
+-   Color Ramp: Cividis
+
+-   Mode: Equal Interval
+
+-   Classes: 4
+
+You will get the following layer:
+
+![](images/Methodology/Picture54.png){fig-align="center"}
+
+3.  Export the `Output` layer as a GeoTiff called `Ferric Iron, Fe3+` and save it in the `01-07-2023 Clipped` folder.
+
+Repeat the steps from **Sections 4.1.1 -- 4.1.4** for the `13-09-2023 Merged` raster layer. Save the new merged layers as `Natural Color (3-2-1)`, `False Color Composite (4-3-2)`, `GNDVI` and `RDVI` in the `13-09-2023 Clipped` folder.
+
+-   For GNDVI use the following expression:
+
+`("13-09-2023 Merged@4"-"13-09-2023 Merged@2)/("13-09-2023 Merged@4"+"13-09-2023 Merged@2")`
+
+-   For RDVI use the following expression:
+
+`("13-09-2023 Merged@4"-"13-09-2023 Merged@3")/(("13-09-2023 Merged@4"+"13-09-2023 Merged@3"))^0.5`
+
+### 4.2	Sentinel-2 Composite Images
+
+#### 4.2.1 	Natural Color (4-3-2)
+
+1.	From SCP \> Band set
+
+![](images/Methodology/Picture55.png){fig-align="center"}
+
+2.	Select the `T34SFB_07-09-2023_T090559_B0_10m` layer and add it to the band set using the ![](images/Methodology/Picture56.png){width="31"} icon. Add the other bands in the following order:
+
+-   T34SFB_07-09-2023_T090559_B02_10m
+
+-   T34SFB_07-09-2023_T090559_B03_10m
+
+-   T34SFB_07-09-2023_T090559_B04_10m
+
+-   T34SFB_07-09-2023_T090559_B05_20m
+
+-   T34SFB_07-09-2023_T090559_B06_20m
+
+-   T34SFB_07-09-2023_T090559_B07_20m
+
+-   T34SFB_07-09-2023_T090559_B08_10m
+
+-   T34SFB_07-09-2023_T090559_B08A_20m
+
+-   T34SFB_07-09-2023_T090559_B09_60m
+
+-   T34SFB_07-09-2023_T090559_B11_20m
+
+-   T34SFB_07-09-2023_T090559_B12_20m
+
+![](images/Methodology/Picture57.png){fig-align="center"}
+
+You will get the following result:
+
+![](images/Methodology/Picture58.png){fig-align="center"}
+
+3.	For Wavelength Quick settings select **Sentinel-2 \[bands 1,2,3,4,5,6,7,8,8A,9,11,12\]**
+
+![](images/Methodology/Picture59.png){fig-align="center"}
+
+4.	Click Run and close the SCP tab
+
+5.	Under **RGB input: '4-3-2'** to get the natural color
+
+![](images/Methodology/Picture60.png){fig-align="center"}
+
+You will get the following result:
+
+![](images/Methodology/Picture61.png){fig-align="center"}
+
+6.  Export the `Virtual Band Set 1` layer as a Rendered Image called `Natural Colors (4-3-2)` and save it in a new subfolder under `GeoTiff > Sentinel` named `07-09-2023 Sentinel 2 Images`.
+
+#### 4.2.2 False Color Composite (8-4-3)
+
+-   Repeat the steps in **Section 4.2.1** but set **RGB to 8-4-3**
+
+You will get the following result:
+
+![](images/Methodology/Picture62.png){fig-align="center"}
+
+1.  Export the `Virtual Band Set 1` layer as a Rendered Image called `False Color Infrared (8-4-3)` and save it in `07-09-2023 Sentinel 2 Images`.
+
+#### 4.2.3 Geology (12-11-2)
+
+The geology band combination enhances the visualisation of geological features such as faults, lithology, and geological formations (GISGeography, 2023). Urban areas appear purple while areas with steep slopes appear dark yellow.
+
+-   Repeat the steps in **Section 4.2.1** but set **RGB to 12-11-2**
+
+You will get the following result:
+
+![](images/Methodology/Picture63.png){fig-align="center"}
+
+6.  Export the `Virtual Band Set 1` layer as a Rendered Image called `Geology (12-11-2)` and save it in `07-09-2023 Sentinel 2 Images`.
+
+#### 4.2.4 Normalised Difference Vegetation Index (NDVI)
+
+The NDVI quantifies vegetation by measuring the difference between near-infrared (NIR) which vegetation strongly reflects and Red light (R) which vegetation absorbs. The formula is as follows:
+
+NDVI = ((NIR - R))/((NIR + R))
+
+Where:
+
+**NIR -- Band 5**
+
+**Red -- Band 4**
+
+1.  Open Raster Calculator
+2.  Under '**Expression**' input:
+
+`("T34SFB_07-09-2023_B05_20m@1" - "T34SFB_07-09-2023_T090559_B04_10m@1")/("T34SFB_07-09-2023_B05_20m@1" + "T34SFB_07-09-2023_T090559_B04_10m@1")`
+
+3.  Set Reference layer to `T34SFB_07-09-2023_B05_20m`
+
+![](images/Methodology/Picture64.png){fig-align="center"}
+
+4.  Click Run
+5.  Adjust the Symbology according to the following:
+
+-   Set Render type to Singleband pseudocolor
+
+-   Color Ramp: Greens
+
+-   Mode: Equal Interval
+
+-   Classes: 4
+
+You will get the following result:
+
+![](images/Methodology/Picture65.png){fig-align="center"}
+
+6.  Export the `Output` layer as a Rendered Image called `NDVI` and save it in `07-09-2023 Sentinel 2 Images`.
+
+#### 4.2.5 Moisture Index
+
+The moisture index uses the visible and Near Infrared (VNIR) and Short Wave Infrared (SWIR) to generate an index of moisture content. Wetter vegetation has higher values while lower values indicate that plants are under stress from insufficient moisture (GISGeography, 2023).
+
+Moisture Index= ((VNIR - SWIR))/((VNIR + SWIR))
+
+Where:
+
+**VNIR -- Band 8A**
+
+**SWIR -- Band 11**
+
+1.  Open Raster Calculator
+2.  Under '**Expression**' input:
+
+`("T34SFB_07-09-2023_B08A_20m@1"-"T34SFB_07-09-2023_B11_20m@1")/("T34SFB_07-09-2023_B08A_20m@1"+"T34SFB_07-09-2023_B11_20m@1")`
+
+3.  Set Reference layer to `T34SFB_07-09-2023_B08A_20m`
+
+![](images/Methodology/Picture66.png){fig-align="center"}
+
+4.  Click Run
+5.  Adjust the Symbology according to the following:
+
+-   Set Render type to Singleband pseudocolor
+
+-   Color Ramp: Blues
+
+-   Mode: Equal Interval
+
+-   Classes: 4
+
+You will get the following result:
+
+![](images/Methodology/Picture67.png){fig-align="center"}
+
+6.  Export the `Output` layer as a Rendered Image called `Moisture Index` and save it in `07-09-2023 Sentinel 2 Images`.
+
+Repeat the steps from **Sections 4.2.1 -- 4.2.5** for `22-09-2023 Clipped` raster layers. Save the new layers as `Natural Colors (4-3-2)`, `False Color Composite (8-4-3)`, `Geology (12-11-2)`, `NDVI`, `Moisture Index` in a new subfolder called `13-09-2023 Sentinel 2 Images` under the `Sentinel 2` folder.
+
+-   For `NDVI` use the following expression:
+
+`("13-09-2023 Merged@4"-"13-09-2023 Merged@2)/("13-09-2023 Merged@4"+"13-09-2023 Merged@2")`
+
+-   For `Moisture Index` use the following expression:
+
+`("T34SFB_2023-09-22-T090701_B05@1"-"T34SFB_2023-09-22-T090701_B04@1")/("T34SFB_2023-09-22-T090701_B05@1"+"T34SFB_2023-09-22-T090701_B04@1")`
+
+### 4.3 Landsat 8 & Landsat 9 Composite Images
+
+#### 4.3.1 Natural Color (4-3-2)
+
+1.  From SCP \> Band set
+2.  Clear the existing band set using the ![](images/Methodology/Picture68.png){width="24"} icon
+
+According to the steps in `Section 4.2.1`, add the `Landsat 8 (25-08-2023)` raster layers in the following order to the Band Set:
+
+-   LC08_L1TP_182037_2023-08-25_T1_B1
+
+-   LC08_L1TP_182037_2023-08-25_T1_B2
+
+-   LC08_L1TP_182037_2023-08-25_T1_B3
+
+-   LC08_L1TP_182037_2023-08-25_T1_B4
+
+-   LC08_L1TP_182037_2023-08-25_T1_B5
+
+-   LC08_L1TP_182037_2023-08-25_T1_B6
+
+-   LC08_L1TP_182037_2023-08-25_T1_B7
+
+-   LC08_L1TP_182037_2023-08-25_T1_B8
+
+-   LC08_L1TP_182037_2023-08-25_T1_B9
+
+-   LC08_L1TP_182037_2023-08-25_T1_B10
+
+-   LC08_L1TP_182037_2023-08-25_T1_B11
+
+You should have the following result:
+
+![](images/Methodology/Picture69.png){fig-align="center"}
+
+3.  Set Wavelength quick settings to Landsat 8 OLI \[bands 1,2,3,4,5,6,7\]
+
+![](images/Methodology/Picture70.png){fig-align="center"}
+
+4.  Click Run and close the SCP tab
+5.  Set RGB to '4-3-2'
+
+You will get the following result:
+
+![](images/Methodology/Picture71.png){fig-align="center"}
+
+Export the `Virtual Band Set 1` layer as a Rendered Image called `Natural Color (4-3-2)` and save it in a new subfolder under `GeoTiff > Landsat 8/9` named `Landsat 8 (25-08-2023) - Images`.
+
+#### 4.3.2 	False Color Composite (5-4-3)
+
+-   Repeat the steps in **Section 4.3.1** but set **RGB to 5-4-3**
+
+You will get the following result:
+
+![](images/Methodology/Picture72.png){fig-align="center"}
+
+1.  Export the `Virtual Band Set 1` layer as a Rendered Image called `False Color Infrared (5-4-3)` and save it in `Landsat 8 (25-08-2023) - Images`.
+
+#### 4.3.3 	Geology (7-6-2)
+
+-   Repeat the steps in **Section 4.3.1** but set **RGB to 7-6-2**
+
+You will get the following result:
+
+![](images/Methodology/Picture73.png){fig-align="center"}
+
+Export the `Virtual Band Set 1` layer as a Rendered Image called `Geology (7-6-2)` and save it in `Landsat 8 (25-08-2023) - Images`.
+
+#### 4.3.4 	Normalised Difference Vegetation Index (NDVI)
+
+The NDVI quantifies vegetation by measuring the difference between short wave infrared (SWIR) near-infrared (NIR). The formula is as follows:
+
+NDVI = ((SWIR - NIR))/((SWIR + NIR))
+
+Where:
+
+**SWIR -- Band 5**
+
+**NIR -- Band 4**
+
+1.  Open Raster Calculator
+2.  Under '**Expression**' input:
+
+`("LC08_L1TP_182037_2023-08-25_T1_B5@1" - "LC08_L1TP_182037_2023-08-25_T1_B4@1")/("LC08_L1TP_182037_2023-08-25_T1_B5@1" + "LC08_L1TP_182037_2023-08-25_T1_B4@1")`
+
+3.  Set Reference layer to `LC08_L1TP_182037_2023-08-25_T1_B5`
+
+![](images/Methodology/Picture75.png){fig-align="center"}
+
+4.  Click Run
+5.  Adjust the Symbology according to the following:
+
+-   Set Render type to Singleband pseudocolor
+
+-   Color Ramp: Greens
+
+-   Mode: Equal Interval
+
+-   Classes: 4
+
+You will get the following result:
+
+![](images/Methodology/Picture76.png){fig-align="center"}
+
+6.  Export the `Output` layer as a Rendered Image called `NDVI` and save it in `Landsat 8 (25-08-2023) - Images`.
+
+#### 4.3.5 	Moisture Index
+
+The moisture index uses the visible and Short Wave Infrared (SWIR) and Thermal to generate an index of moisture content. Wetter vegetation has higher values while lower values indicate that plants are under stress from insufficient moisture (GISGeography, 2023).
+
+Moisture Index = ((SWIR - Thermal))/((SWIR + Thermal))
+
+Where:
+
+**SWIR -- Band 5**
+
+**Thermal -- Band 6**
+
+1.  Open Raster Calculator
+2.  Under '**Expression**' input:
+
+`("T34SFB_2023-09-22-T090701_B05@1"-"T34SFB_2023-09-22-T090701_B06@1")/("T34SFB_2023-09-22-T090701_B05@1"+"T34SFB_2023-09-22-T090701_B06@1")Set Reference layer to LC08_L1TP_182037_2023-08-25_T1_B5`
+
+3.  Set Reference layer to `T34SFB_2023-09-22-T090701_B05`
+
+![](images/Methodology/Picture77.png){fig-align="center"}
+
+4.  Click Run
+5.  Adjust the Symbology according to the following:
+
+-   Set Render type to Singleband pseudocolor
+
+-   Color Ramp: Blues
+
+-   Mode: Equal Interval
+
+-   Classes: 4
+
+You will get the following result:
+
+![](images/Methodology/Picture78.png){fig-align="center"}
+
+6.  Export the `Output` layer as a Rendered Image called `Moisture Index` and save it in `Landsat 8 (25-08-2023) - Images`.
+
+Repeat the steps from **Sections 4.3.1 -- 4.3.5** for `Landsat 9 (18-09-2023) Clipped` raster layers. Save the new layers as `Natural Colors (4-3-2)`, `False Color Composite (8-4-3)`, `Geology (12-11-2)`, `NDVI`, `Moisture Index` in a new subfolder `Landsat 9 (18-09-2023) Composite Images` under the `Landsat 8/9 folder`.
+
+-   For `NDVI` use the following expression:
+
+`("LC09_L1TP_182037_2023-09-18_T1_B5@1"-"LC09_L1TP_182037_2023-09-18_T1_B4@1")/("LC09_L1TP_182037_2023-09-18_T1_B5@1"+"LC09_L1TP_182037_2023-09-18_T1_B4@1")`
+
+-   For `Moisture Index` use the following expression:
+
+`("LC09_L1TP_182037_2023-09-18_T1_B5@1" - "LC09_L1TP_182037_2023-09-18_T1_B6@1")/("LC09_L1TP_182037_2023-09-18_T1_B5@1" + "LC09_L1TP_182037_2023-09-18_T1_B6@1")`
+
+### 4.4 Soil Composition Analysis 
+
+#### 4.4.1 Selecting Derna's Soil Layer
+
+1.	From Layer \> Add Layer \> Add Vector Layer
+
+![](images/Methodology/Picture79.png){fig-align="center"}
+
+2.	Click on the ![](images/Methodology/Picture80.png){width="22"} icon.
+
+3.	Navigate to the `Soil` folder in your computer's repository.
+
+4.	From Soil \> DSMW \> Select `DSMW.shp` layer and click on open.
+
+![](images/Methodology/Picture81.png){fig-align="center"}
+
+5.	The DSMW vector layer will be added to the layers panel.
+
+![](images/Methodology/Picture82.png){fig-align="center"}
+
+6.	Right click on the DSMW layer \> **Open Attribute Table**
+
+![](images/Methodology/Picture83.png){fig-align="center"}
+
+7.	Click on the **Select by Expression** icon ![](images/Methodology/Picture84.png){width="28" height="27"}
+
+8.	Under Expression input the following: `COUNTRY = 'LIBYA'` and click on "**Select Features**".
+
+![](images/Methodology/Picture85.png){fig-align="center"}
+
+The following area will be selected:
+
+![](images/Methodology/Picture86.png){fig-align="center"}
+
+9.	Right click on the DSMW layer \> Export \> **Save Selected Features As...**
+
+o	Save it as a GeoPackage under the name `Libya_Soil` and set the CRS to `EPSG:4326 – WGS 84`
+
+![](images/Methodology/Picture87.png){fig-align="center"}
+
+![](images/Methodology/Picture88.png){fig-align="center"}
+
+10.	Bring the `Derna_city_250m hexagon` layer to the top of the layers panel
+
+![](images/Methodology/Picture89.png){fig-align="center"}
+
+As the `Libya_Soil` extends beyond the administrative boundaries of Derna, we will need to clip the `Libya_Soil` layer.
+
+11.	From Vector \> Geoprocessing Tools \> **Clip**
+
+![](images/Methodology/Picture90.png){fig-align="center"}
+
+12.	Input the following Parameters:
+
+-   For Input Layer set `Libya_Soil` layer
+
+-   For Overlay Layer set `Derna_city_250m_hexagon` layer
+
+-   Click Run
+
+![](images/Methodology/Picture91.png){fig-align="center"}
+
+The following layer will be generated:
+
+![](images/Methodology/Picture92.png){fig-align="center"}
+
+13. Export the `Clipped` layer as a GeoPackage called `Derna_Soil Classification` and save it in the `Soil` subfolder in the `GeoTiff` folder.
+
+#### 4.4.2	Classifying Derna's Soil Layer
+
+1.	Open the **Attribute Table** of the `Derna_Soil Classification` layer.
+
+![](images/Methodology/Picture93.png){fig-align="center"}
+
+Based on the above, the FAOSOIL value is 'I-Bv-Lc-2/3ab'.
+
+2.	Navigate to the `DSMW` folder in your data repository and open the '`readme.doc`'
+
+![](images/Methodology/Picture94.png){fig-align="center"}
+
+![](images/Methodology/Picture95.png){fig-align="center"}
+
+![](images/Methodology/Picture96.png){fig-align="center"}
+
+Using information provided in the '`readme.doc`', we can determine Derna's soil type:
+
+-   **I:** Lithosol
+
+-   **Bv:** Vertic Cambisols
+
+-   **Lc:** Chromic Luvisols
+
+-   **2/3ab:** dry soil that receives moisture for a short period of time.
+
+The dominant soil type of Derna is Lithosols, while Vertic Cambisols and Chromic Luvisols are also present, but with less abundance.
+
+## 5 Data Exploration of Composite Images
+
+### 5.1 Composite Images
+
+Prior to conducting the Land Use Land Cover Change (LULC) classification, it is vital that the composite images are examined to gain a better understanding of the land cover changes caused by the flood. This understanding will enable visual identification of errors without constantly needing to meticulously examine the quantifiable metrics.
+
+#### 5.1.1 Natural Color Images 
+
+![**Figure 7:** Landsat 8/9, Sentinel-2 & GeoEye-1 Natural Color Images Before and After the Flood](images/Methodology/Picture97.png){fig-align="center"}
+
+![**Figure 8:** GeoEye-1 Natural Color Images of the Flood Damage](images/Methodology/Picture98.png){fig-align="center"}
+
+The pre-flood images in Figure 7, demonstrate that Derna is a coastal city bisected by a river, the Wadi Derna River, comprising dense patches of vegetation and a mountainous terrain. However, the post-flood photos in Figure 7 illustrate a scene of utter chaos and destruction as despite the floodwaters notably receding, it is evident that they are carrying a substantial amount of mud and debris, discernible through the color of the water. In addition, tremendous damage has been caused to Derna's essential infrastructure through the destruction of five major roads, a highway, and a port facility as depicted in Figure 8. In particular, the city center has been inundated with areas in close proximity to the Wadi Derna River appearing to have experienced the brunt of the devastation.
+
+In addition, the visualisation of the damage is far easier to see in the GeoEye-1 imagery, followed by Sentinel-2 imagery, and lastly the Landsat 8/9 imagery. This can be attributed to GeoEye-1's close proximity (1.84m) to the target site, resulting in a higher image resolution.
+
+#### 5.1.2 False Color Composite Images
+
+![**Figure 9:** Landsat 8/9, Sentinel-2 & GeoEye-1 False Color Composite Images Before and After the Flood](images/Methodology/Picture99.png){fig-align="center"}
+
+![**Figure 10:** GeoEye-1 False Color Composite Images of the Flood Damage](images/Methodology/Picture100.png){fig-align="center"}
+
+The pre-flood images in Figures 9 and 10, depicts dense vegetation alongside the Wadi Derna river, with dense patches of farmlands scattered throughout the city of Derna. In addition, sparse variation can be observed throughout the city. However, the post-flood photos in Figures 9 and 10 illustrate a severe reduction of vegetation with a notable decrease in vegetation density alongside the Wadi Derna river with numerous plantations in the city being transformed into barren land after the flood.
+
+#### 5.1.3 Geology Images
+
+![**Figure 11:** Landsat 8/9 & Sentinel-2 Geology Images Before and After the Flood](images/Methodology/Picture101.png){fig-align="center"}
+
+The pre-flood geological features of Derna in Figure 11 depicts a dense concentration of geological structures located away from the urban area, which is located along the coastline. The mountainous terrain exhibits a variety of geological characteristics, which is illustrated by the varying intensity of the yellow color. The post-flood images exhibit a more well-defined geological structure, indicating that the flood may have exposed underlying formations through erosion enabled by natural processes such as chemical weathering^1^.
+
+^1^Chemical weathering refers to the chemical decomposition of rocks in situ by
+natural agents at the earth\'s surface which causes rocks to be weakened and
+land to be made more permeable, making it more susceptible to erosion.
+
+#### 5.1.4	 Moisture Index Images
+
+![**Figure 12:** Landsat 8/9 & Sentinel-2 Geology Images Before and After the Flood](images/Methodology/Picture102.png){fig-align="center"}
+
+The pre-flood Moisture Index in Figure 12 exhibits a relatively high water uptake in areas of dense vegetation which reveals that these regions were well-hydrated prior to the flood. However, the post-flood imagery illustrates a slightly increased water uptake in these regions, which indicates that the flood further saturated these regions.
+
+#### 5.1.5 NDVI/GNDVI
+
+![**Figure 13:** Landsat 8/9, Sentinel-2 & GeoEye-1 GNDVI Before and After the Flood](images/Methodology/Picture103.png){fig-align="center"}
+
+The pre-flood GNDVI/NDVI illustrates good vegetation density and health. However, the post-flood GNDVI/NDVI indicates a severe reduction of vegetation, however, vegetation health remains mostly unchanged.
+
+#### 5.1.6 RDVI
+
+![**Figure 14:** GeoEye-1 RDVI Images Before and After the Flood](images/Methodology/Picture104.png){fig-align="center"}
+
+The pre-flood RDVI in Figure 14 illustrates good vegetation health and dense vegetation is distributed across the city. However, the post-flood RDVI demonstrates a severe reduction in vegetation density and decline in vegetation health as illustrated by the white spots present. This indicates that the flood not only stripped away vegetation but also attributed towards reducing vegetation health.
+
+Now that we have gained a better understanding of the land cover changes from **Sections 5.1.1 -- 5.1.6**, we are now ready to proceed with the Land Cover Classification, as outlined in **Section 5.2**.
