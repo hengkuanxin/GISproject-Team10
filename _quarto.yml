@@ -11,8 +11,8 @@ website:
         text: "Overview"
       - href: about.qmd
         text: "About"
-      - href: report.qmd
-        text: "Report"
+      - href: methodology.qmd
+        text: "Methodology"
       - href: results.qmd
         text: "Results and Discussion"
       - href: media/SMT201_Team10_Project_Poster.jpg
@@ -41,6 +41,7 @@ format:
     theme: flatly
     css: styles.css
     toc: true
+    toc-depth: 4
 
 editor: visual
 

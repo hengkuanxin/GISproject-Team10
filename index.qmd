@@ -2,7 +2,9 @@
 title: "Overview"
 ---
 
+# **SMT 201 - Geographic Information Systems for Urban Planning**
 
+![](images/Overview/Picture1.png){fig-align="center"}
 
 # FloodScape: Unearthing Resilience
 
@@ -15,16 +17,26 @@ This project is an undergraduate assignment in the GIS for Urban Planning module
 **Team name:** G1 Team 10
 
 **Team members:**
-	
-1. Zara Mufti, Smart-City Management and Technology Major
-2. Heng Kuan Xin, Smart-City Management and Technology Major
+
+1.  Zara Mufti, Smart-City Management and Technology Major
+2.  Heng Kuan Xin, Smart-City Management and Technology Major
 
 ## Project Summary
-Our project focuses on a recent devastating flood in Derna, a city in North Africa, that killed thousands of people and damaged many major infrastructures after being hit by Storm Daniel. Our project is motivated by the desire to help the people of Derna recover from the recent flood and to build a more flood-resilient city for the future. Using Geographic Information Systems (GIS) analysis to measure the effects of the flood on lives and infrastructure, our project proposes (a number of) flood mitigation strategies to minimise damages from future similar incidents.
 
-The methods involved include collecting remote sensing data using open-access satellite data hubs, followed by a selection of the various bands of each satellite imagery. We then use Land Use / Land Cover (LULC) classification algorithms to detect LULC changes before and after the flood to observe the effects of the catastrophe on people, such as residential houses and hospitals, as well as important infrastructure, such as arterial roads and cell towers. 
+Our project focuses on a recent devastating flood in Derna, a city in North Africa, that killed thousands of people and damaged many major infrastructures after being hit by Storm Daniel. Our project is motivated by the desire to help the people of Derna recover from the recent flood and to build a more flood-resilient city for the future. Using Geographic Information Systems (GIS) analysis to measure the effects of the flood on lives and infrastructure, our project proposes a number of flood mitigation strategies to minimise damage from similar incidents in the future.
 
-Finally, we identified (a number of) key strategies that policy planners can adopt to prevent the recurrence of such a catastrophe and, if not, mitigate the damages caused by the recurrence of such heavy storms and floods.
+Our methodology involved collecting remote sensing data using open-access satellite data hubs, followed by a selection of various bands of each satellite imagery. We then used Land Use / Land Cover (LULC) classification algorithms to detect the LULC changes before and after the flood, placing a key focus on observing the effects on people through damage to residential houses and hospitals, as well as important infrastructure, such as arterial roads and cell towers. Finally, we identified a number of key strategies that policy planners can adopt to prevent the recurrence of such a catastrophe and, if not, mitigate the damages caused by the recurrence of such heavy storms and floods.
 
+## Introduction
 
+Libya is a North African nation that has struggled with a series of natural disasters, primarily floods. Recently, the world witnessed Derna, a city situated along the eastern coast of Libya, endure a series of devastating floods causing detrimental humanitarian and infrastructural destruction, exacerbated by the nation's political-military instability and history of neglect. However, while some may attribute the calamities solely to natural disasters, the devastation is mainly due to neglectful urban planning, inadequate public infrastructure maintenance, and years of political discourse. These incidents have only served to propel Libya towards a heightening humanitarian crisis.
 
+## Motivation
+
+Our project is motivated by the desire to help the people of Derna recover from the recent flood and build a more resilient city for the future. We believe our analysis will serve as an important insight and tool for Derna's policymakers to make informed urban planning decisions. By identifying areas at severe risk of flooding, policymakers will be able to develop targeted flood mitigation strategies to prevent and minimise flood damage from potential future storms or floods in Derna.
+
+## Objectives
+
+1.     To detect land use/land cover changes before and after the Derna flood disaster using remote satellite imagery.
+
+2.     To recommend flood mitigation strategies to ease damages from future disasters.
