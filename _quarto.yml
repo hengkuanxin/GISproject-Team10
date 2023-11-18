@@ -15,7 +15,9 @@ website:
         text: "Methodology"
       - href: results.qmd
         text: "Results and Discussion"
-      - href: media/SMT201_Team10_Project_Poster.jpg
+      - href: lessons.qmd
+        text: "Lessons Learned"
+      - href: poster.qmd
         text: "Poster"
       - text: "Webmaps"
         menu: 
