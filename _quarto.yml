@@ -6,7 +6,7 @@ website:
   navbar:
     background: primary
     search: True
-    left:
+    right:
       - href: index.qmd
         text: Overview
       - href: about.qmd
