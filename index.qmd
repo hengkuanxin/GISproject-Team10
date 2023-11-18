@@ -12,12 +12,14 @@ This project is an undergraduate assignment in the GIS for Urban Planning module
 
 **Theme 1**: Urban Land Use/Land Cover (LULC) Change Detection for Flood Mapping Applications of Satellite Remote Sensing
 
+**Project Timeline:** 01/10/2023 - 19/11/2023
+
 **Team name:** G1 Team 10
 
 **Team members:**
 
-1.  Zara Mufti, Smart-City Management and Technology Major
-2.  Heng Kuan Xin, Smart-City Management and Technology Major
+1.  Zara Mufti, Year 2 Information Systems (Smart-City Management and Technology Major)
+2.  Heng Kuan Xin, Year 2 Information Systems (Smart-City Management and Technology Major)
 
 ## Project Summary
 
