@@ -2,15 +2,13 @@
 title: "Overview"
 ---
 
-[3D Model Testing, Click to Open](https://3d-map-derna.netlify.app)
-
 # FloodScape: Unearthing Resilience
 
 ## Project and Team Background
 
 This project is an undergraduate assignment in the GIS for Urban Planning module taught by Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice) at Singapore Management University.
-Project title: FloodScape: Unearthing Resilience
-Project theme: Theme 1: Urban Land Use/Land Cover (LULC) Change Detection for Flood Mapping Applications of Satellite Remote Sensing
+
+**Theme 1**: Urban Land Use/Land Cover (LULC) Change Detection for Flood Mapping Applications of Satellite Remote Sensing
 
 **Team name:** G1 Team 10
 

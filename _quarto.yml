@@ -25,6 +25,14 @@ website:
             href: Before_Flood_3D/GeoEye-GNDVI-Before/index.html
           - text: "Before Flood RDVI"
             href: Before_Flood_3D/GeoEye-RDVI-Before/index.html
+          - text: "After Flood True Colour Composite"
+            href: After_Flood_3D/GeoEye-TCC-After/index.html
+          - text: "After Flood False Colour Composite"
+            href: After_Flood_3D/GeoEye-FCC-After/index.html
+          - text: "After Flood GNDVI"
+            href: After_Flood_3D/GeoEye-GNDVI-After/index.html
+          - text: "After Flood RDVI"
+            href: After_Flood_3D/GeoEye-RDVI-After/index.html
 
 format:
   html:
