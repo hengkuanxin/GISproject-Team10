@@ -207,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#classifying-dernas-soil-layer" id="toc-classifying-dernas-soil-layer" class="nav-link" data-scroll-target="#classifying-dernas-soil-layer">4.4.2 Classifying Derna’s Soil Layer</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#data-exploration-of-composite-images" id="toc-data-exploration-of-composite-images" class="nav-link" data-scroll-target="#data-exploration-of-composite-images">5 Data Exploration of Composite Images</a>
+  <li><a href="#data-exploration-of-composite-images" id="toc-data-exploration-of-composite-images" class="nav-link" data-scroll-target="#data-exploration-of-composite-images">5. Data Exploration of Composite Images</a>
   <ul>
   <li><a href="#composite-images" id="toc-composite-images" class="nav-link" data-scroll-target="#composite-images">5.1 Composite Images</a>
   <ul class="collapse">
@@ -218,6 +218,27 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#ndvigndvi" id="toc-ndvigndvi" class="nav-link" data-scroll-target="#ndvigndvi">5.1.5 NDVI/GNDVI</a></li>
   <li><a href="#rdvi" id="toc-rdvi" class="nav-link" data-scroll-target="#rdvi">5.1.6 RDVI</a></li>
   </ul></li>
+  <li><a href="#land-cover-classification-geoeye-1" id="toc-land-cover-classification-geoeye-1" class="nav-link" data-scroll-target="#land-cover-classification-geoeye-1">5.2 Land Cover Classification (GeoEye-1)</a>
+  <ul class="collapse">
+  <li><a href="#land-cover-scheme" id="toc-land-cover-scheme" class="nav-link" data-scroll-target="#land-cover-scheme">5.2.1 Land Cover Scheme</a></li>
+  <li><a href="#selecting-training-test-sets-before-flood" id="toc-selecting-training-test-sets-before-flood" class="nav-link" data-scroll-target="#selecting-training-test-sets-before-flood">5.2.2 Selecting Training &amp; Test Sets (Before Flood)</a></li>
+  <li><a href="#image-segmentation-before-flood" id="toc-image-segmentation-before-flood" class="nav-link" data-scroll-target="#image-segmentation-before-flood">5.2.3 Image Segmentation (Before Flood)</a></li>
+  <li><a href="#model-training-before-flood" id="toc-model-training-before-flood" class="nav-link" data-scroll-target="#model-training-before-flood">5.2.4 Model Training (Before Flood)</a></li>
+  <li><a href="#classification-before-flood" id="toc-classification-before-flood" class="nav-link" data-scroll-target="#classification-before-flood">5.2.5 Classification (Before Flood)</a></li>
+  <li><a href="#accuracy-assessment-before-flood" id="toc-accuracy-assessment-before-flood" class="nav-link" data-scroll-target="#accuracy-assessment-before-flood">5.2.6 Accuracy Assessment (Before Flood)</a></li>
+  <li><a href="#repeat-the-steps-for-another-classification-after-flood" id="toc-repeat-the-steps-for-another-classification-after-flood" class="nav-link" data-scroll-target="#repeat-the-steps-for-another-classification-after-flood">5.2.7 Repeat the steps for another classification (After Flood)</a></li>
+  <li><a href="#land-cover-change-detection" id="toc-land-cover-change-detection" class="nav-link" data-scroll-target="#land-cover-change-detection">5.2.8 Land Cover Change Detection</a></li>
+  </ul></li>
+  <li><a href="#land-cover-classification-sentinel-2" id="toc-land-cover-classification-sentinel-2" class="nav-link" data-scroll-target="#land-cover-classification-sentinel-2">5.3 Land Cover Classification (Sentinel-2)</a>
+  <ul class="collapse">
+  <li><a href="#selecting-regions-of-interest-for-training-before-flood" id="toc-selecting-regions-of-interest-for-training-before-flood" class="nav-link" data-scroll-target="#selecting-regions-of-interest-for-training-before-flood">5.3.1 Selecting Regions of Interest for Training (Before Flood)</a></li>
+  <li><a href="#maximum-likelihood-classification-before-flood" id="toc-maximum-likelihood-classification-before-flood" class="nav-link" data-scroll-target="#maximum-likelihood-classification-before-flood">5.3.2 Maximum Likelihood Classification (Before Flood)</a></li>
+  <li><a href="#selecting-regions-of-interest-for-testing-before-flood" id="toc-selecting-regions-of-interest-for-testing-before-flood" class="nav-link" data-scroll-target="#selecting-regions-of-interest-for-testing-before-flood">5.3.3 Selecting Regions of Interest for Testing (Before Flood)</a></li>
+  <li><a href="#accuracy-assessment-before-flood-1" id="toc-accuracy-assessment-before-flood-1" class="nav-link" data-scroll-target="#accuracy-assessment-before-flood-1">5.3.4 Accuracy Assessment (Before Flood)</a></li>
+  <li><a href="#maximum-likelihood-classification-after-flood" id="toc-maximum-likelihood-classification-after-flood" class="nav-link" data-scroll-target="#maximum-likelihood-classification-after-flood">5.3.5 Maximum Likelihood Classification (After Flood)</a></li>
+  <li><a href="#land-cover-change-detection-1" id="toc-land-cover-change-detection-1" class="nav-link" data-scroll-target="#land-cover-change-detection-1">5.3.6 Land Cover Change Detection</a></li>
+  </ul></li>
+  <li><a href="#land-cover-classification-landsat-89" id="toc-land-cover-classification-landsat-89" class="nav-link" data-scroll-target="#land-cover-classification-landsat-89">5.4 Land Cover Classification (Landsat 8/9)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1347,7 +1368,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="data-exploration-of-composite-images" class="level2">
-<h2 class="anchored" data-anchor-id="data-exploration-of-composite-images">5 Data Exploration of Composite Images</h2>
+<h2 class="anchored" data-anchor-id="data-exploration-of-composite-images">5. Data Exploration of Composite Images</h2>
 <section id="composite-images" class="level3">
 <h3 class="anchored" data-anchor-id="composite-images">5.1 Composite Images</h3>
 <p>Prior to conducting the Land Use Land Cover Change (LULC) classification, it is vital that the composite images are examined to gain a better understanding of the land cover changes caused by the flood. This understanding will enable visual identification of errors without constantly needing to meticulously examine the quantifiable metrics.</p>
@@ -1425,9 +1446,821 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>The pre-flood RDVI in Figure 14 illustrates good vegetation health and dense vegetation is distributed across the city. However, the post-flood RDVI demonstrates a severe reduction in vegetation density and decline in vegetation health as illustrated by the white spots present. This indicates that the flood not only stripped away vegetation but also attributed towards reducing vegetation health.</p>
 <p>Now that we have gained a better understanding of the land cover changes from <strong>Sections 5.1.1 – 5.1.6</strong>, we are now ready to proceed with the Land Cover Classification, as outlined in <strong>Section 5.2</strong>.</p>
-
-
 </section>
+</section>
+<section id="land-cover-classification-geoeye-1" class="level3">
+<h3 class="anchored" data-anchor-id="land-cover-classification-geoeye-1">5.2 Land Cover Classification (GeoEye-1)</h3>
+<section id="land-cover-scheme" class="level4">
+<h4 class="anchored" data-anchor-id="land-cover-scheme">5.2.1 Land Cover Scheme</h4>
+<p>We will classify the land cover based on the following categories:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture105.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol type="1">
+<li><p>Waterbody: sea, coastal water</p></li>
+<li><p>Bareland: Open land, rock</p></li>
+<li><p>Vegetation: Farmland, Natural Vegetation</p></li>
+<li><p>Built-up: Buildings, Residentials, Factories</p></li>
+<li><p>Impervious Surface: Roads, Concrete</p></li>
+<li><p>Cloud</p></li>
+<li><p>Shadow</p></li>
+</ol>
+</section>
+<section id="selecting-training-test-sets-before-flood" class="level4">
+<h4 class="anchored" data-anchor-id="selecting-training-test-sets-before-flood">5.2.2 Selecting Training &amp; Test Sets (Before Flood)</h4>
+<p>We will now create 2 sets of samples to be used to train and test our classification model. As the classification will require creating many ESRI shapefile files, we must ensure we practice good file management.</p>
+<ol type="1">
+<li><p>Create a folder called <code>LULC</code>.</p></li>
+<li><p>Within <code>LULC</code>, create a sub-folder called <code>shapefile</code>.</p></li>
+<li><p>Inside <code>shapefile</code> create 3 sub-folders called <code>before_flood</code>, <code>after_flood</code>, and <code>classification</code>.</p></li>
+</ol>
+<p><strong>Note</strong>: it is very important that our folders’ names <strong>do not contain any spaces</strong>; if you have any space in your folders’ names, replace it with an underscore.</p>
+<ol type="1">
+<li>Return to QGIS. From Layer &gt; Create Layer &gt; select New Shapefile Layer…</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture106.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Fill in the details as follows:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture107.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Note: save the new file under <code>shapefile &gt; before_flood</code> as <code>sample_before</code>.</p>
+<ol start="3" type="1">
+<li><p>Once done, click on OK and the new layer will be added to our project.</p></li>
+<li><p>Select on the layer and click on <strong>toggle editing</strong>, then click on the tool called <strong>Add Point Feature</strong>:</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture108.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>We will now create a sample point on our map, referencing the multi-spectral composite layers <code>before the flood, 01-07-2023</code> we created earlier, such as the False Color Composite.</p>
+<ol start="5" type="1">
+<li>Click on the following red point on the map and fill in the details as follows:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture109.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>This signifies that we have created a sample point at that location and given it a land cover class 1, referring to that of a waterbody in our land cover scheme.</p>
+<ol start="6" type="1">
+<li>Repeat this step until we get a total of <strong>50 sample points</strong> <strong>for each land cover class</strong>. Since there are no clouds and shadows present before the flood, we can skip them for now.</li>
+</ol>
+<p>You should have a total of 250 sample points representing a total of 5 different land cover classes, as shown:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture110.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Before we continue, repeat the steps to create another vector layer called <code>test_before</code>, and create a total of 250 test points, while ensuring that our test points do not overlap with the sample points, as shown below (in green):</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture111.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="image-segmentation-before-flood" class="level4">
+<h4 class="anchored" data-anchor-id="image-segmentation-before-flood">5.2.3 Image Segmentation (Before Flood)</h4>
+<p>Now, we will segment the image using a clustering algorithm called “mean shift” to automatically identify objects present in the image.</p>
+<ol type="1">
+<li>Click on the processing toolbox, and open the function called “<strong>Segmentation</strong>”, and fill in the details as follows:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture112.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture113.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Scroll down and ensure we check the checkbox “<strong>8-neighbor connectivity</strong>”.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture114.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Select output file and save it as a shapefile <code>segmentation_before.shp</code> under the folder <code>shapefile &gt; before_flood</code>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture115.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Leave all other options as their default values and click on run. This program might take a few minutes.</li>
+</ol>
+<p>Once done, a the following vector layer will be added to the layers panel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture116.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Next, open the processing tool called <strong>ZonalStatistics</strong>, and fill in the details as follows:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture117.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture118.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Ensure that you save the output file into the same folder, calling it <code>segmentation_stats_before.shp</code>. Click on Run.</li>
+</ol>
+<p>Once done, we get a new layer as shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture119.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Open the attribute table of this layer, and we observe 4 sets of statistics, calculated from the 4 bands present in our GeoEye-1 data.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture120.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="8" type="1">
+<li>We will now use our sample set to select the segments (objects). Open the processing tool called <strong>Join attributes by location</strong> and fill in the details as follows:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture121.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture122.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture123.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture124.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>Specify the output file as a shapefile called <code>sample_stats_before.shp</code> saved under the folder <code>shapefile&gt; before_flood</code>. Click on Run.</li>
+</ol>
+<p>Once done, we get a layer as follows, note that the sample points we created before are now covered by small segments.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture125.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="10" type="1">
+<li>Repeat this step with the test samples, using <code>test_before</code> as the input file, and save the output as <code>test_stats_before.shp</code> under the folder <code>shapefile&gt; before_flood</code>. Click on Run.</li>
+</ol>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture126.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="model-training-before-flood" class="level4">
+<h4 class="anchored" data-anchor-id="model-training-before-flood">5.2.4 Model Training (Before Flood)</h4>
+<p>We will now train the classification model.</p>
+<ol type="1">
+<li>Open the tool called <strong>TrainVectorClassifier</strong> and fill in the details as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture127.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture128.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture129.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture130.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture131.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><p>Save the output file as <code>OBIA_model_before.model</code> under the file <code>shapefile &gt; classification</code>.</p></li>
+<li><p>Once done, click on Run. We do not get a new layer output this time.</p></li>
+</ol>
+</section>
+<section id="classification-before-flood" class="level4">
+<h4 class="anchored" data-anchor-id="classification-before-flood">5.2.5 Classification (Before Flood)</h4>
+<ol type="1">
+<li>After that, open the tool called <strong>VectorClassifier</strong> and fill in the details as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture132.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture133.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture134.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture135.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Save the output file as <code>SVM_classification_output_before.shp</code> under the folder <code>shapefiles &gt; classification</code>. Once done, click on Run.</li>
+</ol>
+<p>The output file is not automatically added to our project this time.</p>
+<ol start="3" type="1">
+<li>Navigate to the classification output file and import it into our project. We get a layer as shown below:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture136.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Navigate to properties of this layer, and select the options as shown below:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture137.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture138.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Categorised by the predicted value, there will be 5 different classes representing the land cover types defined earlier.</p>
+<ol start="5" type="1">
+<li>Click on Apply, and you should get something like this:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture139.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Before continuing we must first dissolve the vector output so that all segments are grouped together by the land cover class. Select the vector tool and fill in the details as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture140.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture141.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Save the output file as a GeoPackage, and name it <code>SVM_classification_output_before_dissolved</code>. Once done, click on Run.</li>
+</ol>
+<p>We get a new layer as shown:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture142.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="8" type="1">
+<li>Repeat the steps and adjust the properties of the layer to get the following results:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture143.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>Next, we will rasterize the layer. Open the tool Rasterize and fill in the details as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture144.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture145.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="10" type="1">
+<li>Save the output file as TIF file, under the folder <code>GeoEye-1 &gt; 1-07-2023 Clipped</code> as <code>SVM_classification_before.tif</code>. Click on Run.</li>
+</ol>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture146.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="11" type="1">
+<li>Repeat the above steps to manipulate the properties of this layer.</li>
+</ol>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture147.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="accuracy-assessment-before-flood" class="level4">
+<h4 class="anchored" data-anchor-id="accuracy-assessment-before-flood">5.2.6 Accuracy Assessment (Before Flood)</h4>
+<p>Finally, we will use the Semi-Automatic Classification Plugin (SCP) tool to calculate the accuracy of the classification.</p>
+<ol type="1">
+<li>From SCP &gt; Postprocessing &gt; select <strong>Accuracy</strong>, and fill in the details as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture148.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture149.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Click on Run. A dialog window pops up. Save the file as <code>SVM_classification_accuracy_before.tif</code> under the folder <code>shapefile &gt; classification</code>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture150.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Once done, the program takes a few seconds to run and gives us the following output.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture151.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The above result provides the area-based error matrix, as well as the overall accuracy and kappa hat value.</p>
+</section>
+<section id="repeat-the-steps-for-another-classification-after-flood" class="level4">
+<h4 class="anchored" data-anchor-id="repeat-the-steps-for-another-classification-after-flood">5.2.7 Repeat the steps for another classification (After Flood)</h4>
+<p>Repeat the processes in <strong>Sections 5.2.2 – 5.2.7</strong>, using the files from <code>13-09-2023 Clipped</code> to classify the satellite image taken after the flood. Save the files into <code>shapefile &gt; after_flood</code> and <code>classification</code>.</p>
+<p>You will get the following results:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture152.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Test and Training Samples</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture153.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Segmentation</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture154.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Classification</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture155.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Rasterized Classification</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture156.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Accuracy Assessment</figcaption>
+</figure>
+</div>
+</section>
+<section id="land-cover-change-detection" class="level4">
+<h4 class="anchored" data-anchor-id="land-cover-change-detection">5.2.8 Land Cover Change Detection</h4>
+<p>Finally, we will use the SCP tool to create a raster layer highlighting the changes in land cover classes before and after the flood.</p>
+<ol type="1">
+<li>From SCP &gt; Postprocessing &gt; select <strong>Land cover change</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture157.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Fill in the details as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture158.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Once ready, click on Run. Save the output file under <code>shapefile &gt; classification</code>, as <code>SVM_LULC_change.tif</code>. After a few seconds, the execution is complete, and we see a new raster layer added to our project:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture159.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture160.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Adjust the properties of the new layer as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture161.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture162.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture163.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture164.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Click on Apply.</li>
+</ol>
+<p>We have now highlighted the extent of damages of the flood caused to different land cover classes, as shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture165.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><strong>Figure 14:</strong> Highlighted Damages (in Area)</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="land-cover-classification-sentinel-2" class="level3">
+<h3 class="anchored" data-anchor-id="land-cover-classification-sentinel-2">5.3 Land Cover Classification (Sentinel-2)</h3>
+<section id="selecting-regions-of-interest-for-training-before-flood" class="level4">
+<h4 class="anchored" data-anchor-id="selecting-regions-of-interest-for-training-before-flood">5.3.1 Selecting Regions of Interest for Training (Before Flood)</h4>
+<p>In this section, we will be creating a few other files separately. For good file management,</p>
+<ol type="1">
+<li><p>Create a folder called <code>SCP</code> in the <code>LULC</code> folder.</p></li>
+<li><p>Next, create two sub-folders called <code>before_flood_sentinel</code> and <code>after_flood_sentinel</code> inside the <code>SCP</code> folder.</p></li>
+</ol>
+<p>We will now classify the Sentinel-2 satellite images using the SCP Plugin.</p>
+<p>Ensure you have the following layers present in your project:</p>
+<ul>
+<li><p><code>T34SFB_07-09-2023_T090559_B2_10m</code></p></li>
+<li><p><code>T34SFB_07-09-2023_T090559_B3_10m</code></p></li>
+<li><p><code>T34SFB_07-09-2023_T090559_B4_10m</code></p></li>
+<li><p><code>T34SFB_07-09-2023_T090559_B8_10m</code></p></li>
+</ul>
+<ol type="1">
+<li>Open the <strong>SCP tool</strong>, and set these four bands into a new Band set, and set the wavelength quick settings as “Sentinel-2”, as shown below:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture166.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>In this case, set the following four bands into Band set 1.</p>
+<ol start="2" type="1">
+<li>Next, close the dialog window, and navigate to the <strong>SCP &amp; Dock</strong> panel:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture167.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Click on <strong>Training Input</strong> along the side of the panel, and click on the <strong>icon with a yellow circle</strong> to create a new training input:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture168.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>A dialog window pops up. Save the file as <code>train_before.scp</code> under the folder <code>before_flood_sentinel</code>, as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture169.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture170.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Next, following our land cover scheme earlier, we will create a region of interest (ROI) representing the land cover of a waterbody.</p>
+<ol start="5" type="1">
+<li>Fill in the <strong>MC Name</strong> and <strong>C Name</strong>, as shown below:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture171.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Next, click on the following tool called Create a ROI polygon inside the SCP toolbar:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture172.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>We will create a polygon in the waterbody, as shown below:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture173.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="8" type="1">
+<li>Once done, click on the following icon to save the ROI’s signature. This process will take a few seconds to execute.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture174.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>Next, a saved signature appears in our signature list.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture175.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="10" type="1">
+<li>Repeat the previous steps for a total of <strong>5 samples for each land cover class for a total of 5 different land cover classes</strong>, as shown in our land cover scheme. You should set the <strong>MC ID to each match the land cover class</strong>.</li>
+</ol>
+<p>Waterbody will use 1 as the MCID, Bareland 2, Vegetation 3, and so on, as shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture176.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Note that there are no clouds or shadows in the Sentinel-2 images. Therefore we will not include those classes.</p>
+<p>Once complete, there will a total of 25 ROI, representing 5 different land cover classes, as shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture177.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="maximum-likelihood-classification-before-flood" class="level4">
+<h4 class="anchored" data-anchor-id="maximum-likelihood-classification-before-flood">5.3.2 Maximum Likelihood Classification (Before Flood)</h4>
+<p>Next, we will be classifying our satellite image using the calculated signatures of the ROIs that we have created.</p>
+<ol type="1">
+<li>From SCP &gt; Band processing &gt; select Classification</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture178.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Fill in the details as follows:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture179.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Once done, click on Run and save the output file as <code>ML_before_flood</code> under the folder <code>before_flood_sentinel</code>. The process will take a few seconds to run.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture180.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Once the process is complete, close the SCP window.</li>
+</ol>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture181.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Adjust the properties of this new layer using the methods used earlier, such that the result looks like the following:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture182.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><strong>Note:</strong> Maximum Likelihood gave us a more accurate result in this case, therefore it is preferred over the other methods.</p>
+</section>
+<section id="selecting-regions-of-interest-for-testing-before-flood" class="level4">
+<h4 class="anchored" data-anchor-id="selecting-regions-of-interest-for-testing-before-flood">5.3.3 Selecting Regions of Interest for Testing (Before Flood)</h4>
+<p>We will repeat the previous section and create a set of ROIs to test our classification using the same band set. In our case, we are using band set 1.</p>
+<ol type="1">
+<li>Same as before, create a new file called <code>test_before.scp</code> under the folder <code>before_flood_sentinel</code>.</li>
+<li>Create a total of <strong>25 ROIs</strong>, representing the <strong>5 land cover classes</strong>.</li>
+</ol>
+<p>You will get the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture183.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="accuracy-assessment-before-flood-1" class="level4">
+<h4 class="anchored" data-anchor-id="accuracy-assessment-before-flood-1">5.3.4 Accuracy Assessment (Before Flood)</h4>
+<p>Once we have completed our classification, we will now assess the accuracy to determine whether the classification is reliable and can be used to detect land cover change.</p>
+<ol type="1">
+<li>From SCP &gt; Postprocessing &gt; select <strong>Accuracy</strong>, as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture148.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Fill in the details as follows:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture184.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Once done, click on Run, and save your output file as <code>ML_accuracy_before_flood</code> under the folder <code>before_flood_sentinel</code> as shown below:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture185.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Upon completion, the program will execute.</li>
+</ol>
+<p>You will receive the following result:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture186.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Based on the result, we are able to see the area-based error matrix, as well as the overall accuracy and kappa hat value of the classification.</p>
+</section>
+<section id="maximum-likelihood-classification-after-flood" class="level4">
+<h4 class="anchored" data-anchor-id="maximum-likelihood-classification-after-flood">5.3.5 Maximum Likelihood Classification (After Flood)</h4>
+<p>Repeat the steps above to classify the Sentinel-2 satellite images taken after the flood.</p>
+<p>Ensure you have the following layers in your project:</p>
+<ul>
+<li><p><code>T34SFB_18-09-2023_T090559_B2_10m</code></p></li>
+<li><p><code>T34SFB_18-09-2023_T090559_B3_10m</code></p></li>
+<li><p><code>T34SFB_18-09-2023_T090559_B4_10m</code></p></li>
+<li><p><code>T34SFB_18-09-2023_T090559_B8_10m</code></p></li>
+</ul>
+<ol type="1">
+<li>Next, add them into a new band set, for example, Band set 2.</li>
+<li>Create the ROIs for Train and Test, naming the files as <code>train_after.scp</code> and <code>test_after.scp</code> respectively, saving them into the folder <code>after_flood_sentinel</code>.</li>
+<li>Perform maximum likelihood classification, saving your file as <code>ML_after_flood</code> under the folder <code>after_flood_sentinel</code>.</li>
+<li>Assess the accuracy of the classification.</li>
+</ol>
+</section>
+<section id="land-cover-change-detection-1" class="level4">
+<h4 class="anchored" data-anchor-id="land-cover-change-detection-1">5.3.6 Land Cover Change Detection</h4>
+<p>Once the two classifications are ready, we will use the SCP tool to determine the changes before and after the flood.</p>
+<ol type="1">
+<li>Select the <strong>Land cover change</strong> tool of the SCP plugin (as shown in previous sections) and fill in the details as shown:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture187.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Click on Run and save the output as <code>ML_LULC_sentinel</code> under the folder <code>SCP</code>. The output is shown as follows, with a new layer added to our project:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture188.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture189.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Same as what we did before during the classification of GeoEye-1 images, adjust the properties of the new layer such that it appears as follows:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture190.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture191.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture192.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture193.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="land-cover-classification-landsat-89" class="level3">
+<h3 class="anchored" data-anchor-id="land-cover-classification-landsat-89">5.4 Land Cover Classification (Landsat 8/9)</h3>
+<p>Repeat the steps in <strong>Section 5.3</strong> for the classification of the Landsat 8/9 satellite images before and after the flood.</p>
+<ol type="1">
+<li><p>Create 2 new sub-folders called <code>before_flood_landsat</code> and <code>after_flood_landsat</code> under the folder <code>SCP</code>.</p></li>
+<li><p>Ensure that you have the following layers in your project:</p></li>
+</ol>
+<ul>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B1</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B2</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B3</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B4</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B5</p></li>
+<li><p>LC08_L1TP_182037_2023-08-25_T1_B6</p></li>
+</ul>
+<ol start="3" type="1">
+<li><p>Next, add the layers into a new band set, such as Band set 3.</p></li>
+<li><p>Create the ROIs for Train and Test, naming the files as <code>train_before.scp</code> and <code>test_before.scp</code> respectively, saving them into the folder <code>before_flood_landsat</code>.</p></li>
+<li><p>Perform random forest classification, saving your file as <code>RF_before_flood</code> under the folder <code>before_flood_landsat</code>.</p></li>
+</ol>
+<p><strong>Note:</strong> As Random Forest provided a more accurate result for this scenario, it is preferred over the other methods.</p>
+<ol start="6" type="1">
+<li>Assess the accuracy of the classification.</li>
+</ol>
+<p>Once the classification for the Landsat 8 images before the flood is complete, repeat the steps for the classification for the Landsat 9 images after the flood, using the following layers:</p>
+<ul>
+<li><p>LC09_L1TP_182037_2023-09-18_T1_B1</p></li>
+<li><p>LC09_L1TP_182037_2023-09-18_T1_B2</p></li>
+<li><p>LC09_L1TP_182037_2023-09-18_T1_B3</p></li>
+<li><p>LC09_L1TP_182037_2023-09-18_T1_B4</p></li>
+<li><p>LC09_L1TP_182037_2023-09-18_T1_B5</p></li>
+<li><p>LC09_L1TP_182037_2023-09-18_T1_B6</p></li>
+</ul>
+<p>The results of the classification are shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture194.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Classification Before Flood (Landsat)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Methodology/Picture195.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Classification After Flood (Landsat)</figcaption>
+</figure>
+</div>
+<p>As the resolution of the Landsat 8/9 satellite images are too coarse to clearly identify some land covers such as the roads (Impervious Surface), which are narrow and long, it indicates that classifications using Landsat 8/9 satellite images are not as useful as other satellite imagery to detect land cover changes. Therefore, we will be omitting the Landsat 8/9 satellite images from our final analysis.</p>
+
+
 </section>
 </section>
 
