@@ -1,7 +1,3 @@
----
-title: "Overview"
----
-
 # **SMT 201 - Geographic Information Systems for Urban Planning**
 
 ![](images/Overview/Picture1.png){fig-align="center"}
@@ -9,6 +5,8 @@ title: "Overview"
 # FloodScape: Unearthing Resilience
 
 ## Project and Team Background
+
+**Access our github repository here:** [*Github*](https://github.com/hengkuanxin/GISproject-Team10)
 
 This project is an undergraduate assignment in the GIS for Urban Planning module taught by Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice) at Singapore Management University.
 

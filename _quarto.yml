@@ -8,9 +8,9 @@ website:
     search: True
     right:
       - href: index.qmd
+        text: "Home"
+      - href: overview.qmd
         text: "Overview"
-      - href: about.qmd
-        text: "About"
       - href: methodology.qmd
         text: "Methodology"
       - href: results.qmd
