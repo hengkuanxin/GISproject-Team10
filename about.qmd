@@ -2,17 +2,29 @@
 title: "The Team"
 ---
 
-### SMT201 G1 Team 10
-
-![Photo taken during our townhall presentation](media/presentation_photo.jpg){fig-align="center" width="286"}
-
 **Access our github repository here:** [*Github*](https://github.com/hengkuanxin/GISproject-Team10)
 
 **Access our full project report here:** [*OneDrive*](https://smu-my.sharepoint.com/:b:/g/personal/zara_mufti_2022_scis_smu_edu_sg/EeRnjmg0-zJMmkA3IdflZzQBhWBKejLt8c2Qi3qiOUJtSg?e=hZ4IHD)
 
-This project is an undergraduate assignment in the GIS for Urban Planning module taught by Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice) at Singapore Management University.
+### SMT201 G1 Team 10
 
-**Team members:**
+![Photo taken during our townhall presentation](media/presentation_photo.jpg){fig-align="center" width="286"}
 
-1.  Zara Mufti, Year 2 Information Systems (Smart-City Management and Technology Major)
-2.  Heng Kuan Xin, Year 2 Information Systems (Smart-City Management and Technology Major)
+**Team Members:**
+
+-   **Zara Mufti**: Year 2, Information Systems (Smart-City Management and Technology Major)
+-   **Heng Kuan Xin**: Year 2, Information Systems (Smart-City Management and Technology Major)
+
+**Special Thanks To:**
+
+![](media/Prof%20Kam.png){fig-align="center" width="145"}
+
+This project is an undergraduate assignment in the GIS for Urban Planning module taught by **Dr. Kam Tin Seong**, Associate Professor of Information Systems (Practice) at Singapore Management University. Professor Kam is also the supervisor of our project.
+
+**Reach out to us at:**
+
+-   **Zara**
+    -   LinkedIn: <https://www.linkedin.com/in/zara-mufti-5382b8233/>
+-   **Kuan Xin**
+    -   LinkedIn: <https://www.linkedin.com/in/heng-kuan-xin/>
+    -   Email: kuanxin.heng\@gmail.com

@@ -6,11 +6,9 @@ website:
   navbar:
     background: primary
     search: True
-    right:
+    left:
       - href: index.qmd
         text: "Home"
-      - href: about.qmd
-        text: "About Us"
       - href: overview.qmd
         text: "Overview"
       - href: methodology.qmd
@@ -23,6 +21,9 @@ website:
         text: "Poster"
       - text: "3D Webmap"
         href: 3D Model/index.html
+    right:
+      - href: about.qmd
+        text: "About Us"
 
 format:
   html:
