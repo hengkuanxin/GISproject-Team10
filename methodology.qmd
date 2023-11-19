@@ -18,7 +18,7 @@ We will first need to create the following folders to store our data:
 
 4.     Create a subfolder called `Geopackage` in the `project` folder.
 
-#### 3.1.1    Collecting GeoEye-1 Images
+#### 3.1.1 Collecting GeoEye-1 Images
 
 We will now download the GeoEye-1 satellite images from MAXAR.
 
@@ -52,7 +52,7 @@ Your screen should look similar to the following:
 
 -   `13-09-2023`
 
-#### 3.1.2    Collecting Sentinel 2 Images
+#### 3.1.2 Collecting Sentinel 2 Images
 
 We will now download the Sentinel 2 satellite images from the Copernicus Open Access Hub.
 
@@ -90,7 +90,7 @@ We will now download the Sentinel 2 satellite images from the Copernicus Open Ac
 
 -   `Sentinel-2B, 7/09/2023`
 
-#### 3.1.3    Collecting Landsat 8-9 Images
+#### 3.1.3 Collecting Landsat 8-9 Images
 
 We will now download Landsat 8 and 9 satellite images from the Earth Explorer.
 

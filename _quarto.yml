@@ -19,24 +19,8 @@ website:
         text: "Lessons Learned"
       - href: poster.qmd
         text: "Poster"
-      - text: "Webmaps"
-        menu: 
-          - text: "Before Flood True Colour Composite"
-            href: Before_Flood_3D/GeoEye-TCC-Before/index.html
-          - text: "Before Flood False Colour Composite"
-            href: Before_Flood_3D/GeoEye-FCC-Before/index.html
-          - text: "Before Flood Green Normalized Difference Vegetation Index (GNDVI)"
-            href: Before_Flood_3D/GeoEye-GNDVI-Before/index.html
-          - text: "Before Flood Renormalized Difference Vegetation Index (RDVI)"
-            href: Before_Flood_3D/GeoEye-RDVI-Before/index.html
-          - text: "After Flood True Colour Composite"
-            href: After_Flood_3D/GeoEye-TCC-After/index.html
-          - text: "After Flood False Colour Composite"
-            href: After_Flood_3D/GeoEye-FCC-After/index.html
-          - text: "After Flood Green Normalized Difference Vegetation Index (GNDVI)"
-            href: After_Flood_3D/GeoEye-GNDVI-After/index.html
-          - text: "After Flood Renormalized Difference Vegetation Index (RDVI)"
-            href: After_Flood_3D/GeoEye-RDVI-After/index.html
+      - text: "3D Webmap"
+        href: 3D Model/index.html
 
 format:
   html:
