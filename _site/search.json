@@ -2,9 +2,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "The Team",
     "section": "",
-    "text": "Libya is a North African nation that has struggled with a series of natural disasters, primarily floods. Recently, the world witnessed Derna, a city situated along the eastern coast of Libya, endure a series of devastating floods causing detrimental humanitarian and infrastructural destruction, exacerbated by the nation’s political-military instability and history of neglect. However, while some may attribute the calamities solely to natural disasters, the devastation is mainly due to neglectful urban planning, inadequate public infrastructure maintenance, and years of political discourse. These incidents have only propelled Libya towards an escalating humanitarian crisis.\n\n\n\nFigure 1: Geographic Location of Libya, Derna\n\n\n\n\nDerna, a city renowned as Libya’s cultural capital, has been the subject of with recurrent flood events over the past century, each varying in severity. Located along the eastern coast, this city of approximately 90,000 residents bears the scars of previous floods which occurred in 1941, 1959, and 1968 (Pietromarchi, 2023).\nThe Wadi Derna River, which courses from the south of the city into the Mediterranean Sea, bisects Derna. Control over this river was entrusted to two dams: the Upper Wadi Derna Dam, located 13 kilometers outside the city, with a capacity of 1.5 million cubic meters, and the Lower Wadi Derna Dam, situated a few hundred meters from the city’s outskirts, with a capacity of 22.5 million cubic meters. In an interview, Derna’s Deputy Mayor Ahmed Madroud revealed that these critical structures, constructed by a Yugoslav company in the mid-1970s, had deteriorated as a result of no maintenance since 2002 (Loveluck, 2023).\nTragically, the lack of public investment in Derna’s dams proved to be a catastrophic decision. On September 10, 2023, Mediterranean Storm Daniel unleashed intense rainfall, causing the dams to succumb and release over 30 million cubic meters of water onto the city. This amount, equivalent to the volume of 12,000 Olympic-sized swimming pools, overwhelmed Derna’s drainage capacity. Even more devastating is the news that One day before the storm hit Libya, the mayor urged that areas surrounding the dam should be evacuated in a Press Conference.\nHowever an emergency committee formed by the eastern government’s Interior Ministry ordered curfews instead.\nThe ensuing flash floods inundated residential areas, disrupted road networks, and claimed swathes of agricultural land. The fallout from this disaster has been extensive, and as of October 9, 2023, the death toll from the floods is estimated to be over 11,300, with an additional 10,000 people still missing (Smith, 2023). In addition, to the loss of life, thousands of residents have been displaced, detrimental damage has been done to homes, and the city has been left without service (Loveluck, 2023).\n\n\n\nFigure 2: GeoEye-1 Satellite Images of Derna Before and After Flood Daniel"
+    "text": "Access our github repository here: Github\nAccess our full project report here: OneDrive\nThis project is an undergraduate assignment in the GIS for Urban Planning module taught by Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice) at Singapore Management University.\nProject Timeline: 01/10/2023 - 19/11/2023\nTeam name: G1 Team 10\nTeam members:\n\nZara Mufti, Year 2 Information Systems (Smart-City Management and Technology Major)\nHeng Kuan Xin, Year 2 Information Systems (Smart-City Management and Technology Major)"
   },
   {
     "objectID": "index.html",
@@ -145,5 +145,12 @@
     "title": "Poster",
     "section": "",
     "text": "Here is our poster, you can also find the original version available over here: Canva"
+  },
+  {
+    "objectID": "about.html#project-and-team-background",
+    "href": "about.html#project-and-team-background",
+    "title": "The Team",
+    "section": "",
+    "text": "Access our github repository here: Github\nAccess our full project report here: OneDrive\nThis project is an undergraduate assignment in the GIS for Urban Planning module taught by Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice) at Singapore Management University.\nProject Timeline: 01/10/2023 - 19/11/2023\nTeam name: G1 Team 10\nTeam members:\n\nZara Mufti, Year 2 Information Systems (Smart-City Management and Technology Major)\nHeng Kuan Xin, Year 2 Information Systems (Smart-City Management and Technology Major)"
   }
 ]

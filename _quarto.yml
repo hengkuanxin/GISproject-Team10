@@ -9,6 +9,8 @@ website:
     right:
       - href: index.qmd
         text: "Home"
+      - href: about.qmd
+        text: "About Us"
       - href: overview.qmd
         text: "Overview"
       - href: methodology.qmd

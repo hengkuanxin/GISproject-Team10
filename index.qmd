@@ -4,24 +4,13 @@
 
 # FloodScape: Unearthing Resilience
 
-## Project and Team Background
-
 **Access our github repository here:** [*Github*](https://github.com/hengkuanxin/GISproject-Team10)
 
-**Access our full project report here:** [*OneDrive*](https://smu-my.sharepoint.com/:w:/g/personal/zara_mufti_2022_scis_smu_edu_sg/EVL75oup4jJHke90Eso1LuMB5lO2_30-IwHAWbZeheB6-A?e=sCHac9)
+**Access our full project report here:** [*OneDrive*](https://smu-my.sharepoint.com/:b:/g/personal/zara_mufti_2022_scis_smu_edu_sg/EeRnjmg0-zJMmkA3IdflZzQBhWBKejLt8c2Qi3qiOUJtSg?e=hZ4IHD)
 
-This project is an undergraduate assignment in the GIS for Urban Planning module taught by Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice) at Singapore Management University.
+This group project is an undergraduate assignment in the GIS for Urban Planning course taught by Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice) at Singapore Management University. Find out more about the team at
 
-**Theme 1**: Urban Land Use/Land Cover (LULC) Change Detection for Flood Mapping Applications of Satellite Remote Sensing
-
-**Project Timeline:** 01/10/2023 - 19/11/2023
-
-**Team name:** G1 Team 10
-
-**Team members:**
-
-1.  Zara Mufti, Year 2 Information Systems (Smart-City Management and Technology Major)
-2.  Heng Kuan Xin, Year 2 Information Systems (Smart-City Management and Technology Major)
+**Project Theme**: Urban Land Use/Land Cover (LULC) Change Detection for Flood Mapping Applications of Satellite Remote Sensing (Theme 1)
 
 ## Project Summary
 
@@ -39,5 +28,5 @@ Our project is motivated by the desire to help the people of Derna recover from 
 
 ## Objectives
 
-1.   To detect land use/land cover changes before and after the Derna flood disaster using remote satellite imagery.
+1.  To detect land use/land cover changes before and after the Derna flood disaster using remote satellite imagery.
 2.  To recommend flood mitigation strategies to ease damages from future disasters.
