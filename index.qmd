@@ -8,7 +8,7 @@
 
 **Access our full project report here:** [*OneDrive*](https://smu-my.sharepoint.com/:b:/g/personal/zara_mufti_2022_scis_smu_edu_sg/EeRnjmg0-zJMmkA3IdflZzQBhWBKejLt8c2Qi3qiOUJtSg?e=hZ4IHD)
 
-This group project is an undergraduate assignment in the GIS for Urban Planning course taught by Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice) at Singapore Management University. Find out more about the team at
+This group project is an undergraduate assignment in the GIS for Urban Planning course taught by Dr. Kam Tin Seong, Associate Professor of Information Systems (Practice) at Singapore Management University. Find out more about the team [here](https://smt201-ay2023-24t1-team10.netlify.app/about).
 
 **Project Theme**: Urban Land Use/Land Cover (LULC) Change Detection for Flood Mapping Applications of Satellite Remote Sensing (Theme 1)
 
